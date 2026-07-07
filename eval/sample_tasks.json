@@ -1,0 +1,18 @@
+[
+  {
+    "task_id": "t1",
+    "prompt": "What is the capital of France?"
+  },
+  {
+    "task_id": "t2",
+    "prompt": "Calculate 17 + 25."
+  },
+  {
+    "task_id": "t3",
+    "prompt": "Classify the sentiment of this text: I loved the fast setup, but the docs were confusing."
+  },
+  {
+    "task_id": "t4",
+    "prompt": "Summarize this sentence in fewer words: The containerized agent reads benchmark tasks, produces JSON answers, and exits cleanly."
+  }
+]

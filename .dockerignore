@@ -1,0 +1,11 @@
+.git/
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+local_context/
+docs/
+eval/reports/
+input/
+output/
