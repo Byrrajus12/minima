@@ -2,6 +2,7 @@
 set -euo pipefail
 
 mkdir -p output eval/reports
+rm -f output/live_mini_results.json
 
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m minima.main \
   --input eval/live_mini_tasks.json \
