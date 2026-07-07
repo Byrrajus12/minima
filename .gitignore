@@ -17,7 +17,8 @@ output/*
 !output/.gitkeep
 
 # Eval artifacts
-eval/reports/
+eval/reports/*
+!eval/reports/.gitkeep
 *.log
 
 # Build artifacts

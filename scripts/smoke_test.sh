@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-IMAGE_NAME="${IMAGE_NAME:-minima:phase2}"
+IMAGE_NAME="${IMAGE_NAME:-minima:local}"
 SMOKE_DIR="${SMOKE_DIR:-$(pwd)/.smoke}"
 
 rm -rf "$SMOKE_DIR"

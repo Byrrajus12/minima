@@ -1,6 +1,6 @@
 # minima
 
-Phase 2 baseline for the AMD Developer Hackathon Track 1 agent.
+Baseline agent for the AMD Developer Hackathon Track 1 task format.
 
 The container reads `/input/tasks.json`, writes `/output/results.json`, and exits with code 0 when the run succeeds.
 
@@ -28,7 +28,7 @@ Runtime Fireworks settings are read from environment variables:
 - `FIREWORKS_BASE_URL`
 - `ALLOWED_MODELS`
 
-`ALLOWED_MODELS` is a comma-separated list. The baseline uses the first listed model and never hardcodes model IDs.
+`ALLOWED_MODELS` is a comma-separated list. The agent uses the first listed model and never hardcodes model IDs.
 
 When none of these variables are set, minima uses a deterministic placeholder answer marked `LOCAL TEST PLACEHOLDER`. This mode is for local JSON IO smoke tests only. If any Fireworks setting is provided, all required settings must be present and real Fireworks calls are used.
 
@@ -48,7 +48,7 @@ PYTHONPATH=src python -m minima.main --input eval/sample_tasks.json --output out
 ## Docker Run
 
 ```bash
-docker build --platform linux/amd64 -t minima:phase2 .
+docker build --platform linux/amd64 -t minima:local .
 cp eval/sample_tasks.json input/tasks.json
 ./scripts/run_docker.sh
 ```

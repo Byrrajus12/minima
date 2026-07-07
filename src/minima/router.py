@@ -1,4 +1,4 @@
-"""Task routing for the Phase 2 baseline agent."""
+"""Task routing for the minima agent."""
 
 from __future__ import annotations
 

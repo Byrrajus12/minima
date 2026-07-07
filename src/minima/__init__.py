@@ -1,4 +1,4 @@
-"""minima Phase 2 baseline agent."""
+"""minima agent package."""
 
 __all__ = ["__version__"]
 

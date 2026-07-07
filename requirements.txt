@@ -1,1 +1,1 @@
-# Phase 2 baseline uses only the Python standard library.
+# Runtime dependencies are intentionally minimal.

@@ -1,4 +1,4 @@
-"""Command-line entry point for the minima Phase 2 baseline."""
+"""Command-line entry point for the minima agent."""
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ DEFAULT_OUTPUT = Path("/output/results.json")
 
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run the minima baseline agent.")
+    parser = argparse.ArgumentParser(description="Run the minima agent.")
     parser.add_argument("--input", default=str(DEFAULT_INPUT), help="Path to tasks JSON.")
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT), help="Path to results JSON.")
     return parser.parse_args(argv)

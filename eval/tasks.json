@@ -1,0 +1,162 @@
+[
+  {
+    "task_id": "factual_001",
+    "prompt": "What is the capital city of Japan?"
+  },
+  {
+    "task_id": "factual_002",
+    "prompt": "Which planet is known as the Red Planet?"
+  },
+  {
+    "task_id": "factual_003",
+    "prompt": "What gas do plants primarily absorb from the air for photosynthesis?"
+  },
+  {
+    "task_id": "factual_004",
+    "prompt": "Who wrote the play Romeo and Juliet?"
+  },
+  {
+    "task_id": "factual_005",
+    "prompt": "What is the freezing point of water in Celsius?"
+  },
+  {
+    "task_id": "math_001",
+    "prompt": "Calculate 18 + 27."
+  },
+  {
+    "task_id": "math_002",
+    "prompt": "What is 9 multiplied by 8?"
+  },
+  {
+    "task_id": "math_003",
+    "prompt": "Solve: 144 divided by 12."
+  },
+  {
+    "task_id": "math_004",
+    "prompt": "If a notebook costs 3 dollars, how much do 7 notebooks cost?"
+  },
+  {
+    "task_id": "math_005",
+    "prompt": "Calculate 2.5 plus 4.25."
+  },
+  {
+    "task_id": "sentiment_001",
+    "prompt": "Classify the sentiment: The setup was quick and the result was excellent."
+  },
+  {
+    "task_id": "sentiment_002",
+    "prompt": "Classify the sentiment: The tool crashed twice and wasted my time."
+  },
+  {
+    "task_id": "sentiment_003",
+    "prompt": "Classify the sentiment: The package arrived at noon."
+  },
+  {
+    "task_id": "sentiment_004",
+    "prompt": "Classify the sentiment: The interface is beautiful, but the export failed."
+  },
+  {
+    "task_id": "sentiment_005",
+    "prompt": "Classify the sentiment: I am disappointed by the slow response."
+  },
+  {
+    "task_id": "summarization_001",
+    "prompt": "Summarize in one sentence: Lina packed a camera, hiked to the ridge before sunrise, and photographed the valley as fog lifted."
+  },
+  {
+    "task_id": "summarization_002",
+    "prompt": "Summarize in one sentence: The deployment failed because the service expected a JSON file, but the mounted directory was empty."
+  },
+  {
+    "task_id": "summarization_003",
+    "prompt": "Summarize briefly: Three students compared soil samples, recorded moisture levels, and concluded that shade slowed evaporation."
+  },
+  {
+    "task_id": "summarization_004",
+    "prompt": "Summarize briefly: The library extended weekend hours after patrons requested more quiet study time before final exams."
+  },
+  {
+    "task_id": "summarization_005",
+    "prompt": "Summarize in one sentence: A small bakery changed suppliers, lowered ingredient costs, and kept its bread prices unchanged."
+  },
+  {
+    "task_id": "ner_001",
+    "prompt": "Extract named entities: Maya Patel visited Berlin with Orion Labs in April."
+  },
+  {
+    "task_id": "ner_002",
+    "prompt": "Extract named entities: Carlos Rivera joined Northstar Bank in Toronto."
+  },
+  {
+    "task_id": "ner_003",
+    "prompt": "Extract named entities: Priya Shah emailed Greenfield School from Mumbai."
+  },
+  {
+    "task_id": "ner_004",
+    "prompt": "Extract named entities: The River Museum hired Elena Rossi in Florence."
+  },
+  {
+    "task_id": "ner_005",
+    "prompt": "Extract named entities: Omar Khan presented for Atlas Robotics at Stanford University."
+  },
+  {
+    "task_id": "code_debugging_001",
+    "prompt": "Debug this Python code and state the fix: nums=[1,2,3]; print(nums[3])"
+  },
+  {
+    "task_id": "code_debugging_002",
+    "prompt": "Debug this Python code and state the fix: def add(a,b): return a-b"
+  },
+  {
+    "task_id": "code_debugging_003",
+    "prompt": "Debug this Python code and state the fix: for i in range(3) print(i)"
+  },
+  {
+    "task_id": "code_debugging_004",
+    "prompt": "Debug this Python code and state the fix: name='Ada'; print(Name)"
+  },
+  {
+    "task_id": "code_debugging_005",
+    "prompt": "Debug this Python code and state the fix: value = int('abc')"
+  },
+  {
+    "task_id": "logic_001",
+    "prompt": "If all ravens are birds and Kira is a raven, is Kira a bird?"
+  },
+  {
+    "task_id": "logic_002",
+    "prompt": "If no squares are circles and this shape is a square, can it be a circle?"
+  },
+  {
+    "task_id": "logic_003",
+    "prompt": "Mina is taller than Jo. Jo is taller than Lee. Who is tallest?"
+  },
+  {
+    "task_id": "logic_004",
+    "prompt": "A box contains only red balls. Sam picks a ball from the box. What color is it?"
+  },
+  {
+    "task_id": "logic_005",
+    "prompt": "If the lamp is on, the room is bright. The room is not bright. Is the lamp on?"
+  },
+  {
+    "task_id": "code_generation_001",
+    "prompt": "Write a Python function named double that returns its input multiplied by 2."
+  },
+  {
+    "task_id": "code_generation_002",
+    "prompt": "Write a Python function named is_even that returns True for even integers."
+  },
+  {
+    "task_id": "code_generation_003",
+    "prompt": "Write a Python function named greet that returns 'Hello, ' plus the provided name."
+  },
+  {
+    "task_id": "code_generation_004",
+    "prompt": "Write a Python function named first_item that returns the first item in a list."
+  },
+  {
+    "task_id": "code_generation_005",
+    "prompt": "Write a Python function named square that returns n squared."
+  }
+]

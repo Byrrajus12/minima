@@ -1,0 +1,415 @@
+[
+  {
+    "task_id": "factual_001",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "tokyo"
+      ]
+    }
+  },
+  {
+    "task_id": "factual_002",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "mars"
+      ]
+    }
+  },
+  {
+    "task_id": "factual_003",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "carbon dioxide",
+        "co2"
+      ]
+    }
+  },
+  {
+    "task_id": "factual_004",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "shakespeare"
+      ]
+    }
+  },
+  {
+    "task_id": "factual_005",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "0",
+        "zero"
+      ]
+    }
+  },
+  {
+    "task_id": "math_001",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 45,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "math_002",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 72,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "math_003",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 12,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "math_004",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 21,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "math_005",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 6.75,
+      "tolerance": 0.001
+    }
+  },
+  {
+    "task_id": "sentiment_001",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "positive"
+    }
+  },
+  {
+    "task_id": "sentiment_002",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "negative"
+    }
+  },
+  {
+    "task_id": "sentiment_003",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "neutral"
+    }
+  },
+  {
+    "task_id": "sentiment_004",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "mixed"
+    }
+  },
+  {
+    "task_id": "sentiment_005",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "negative"
+    }
+  },
+  {
+    "task_id": "summarization_001",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "lina",
+        "ridge",
+        "fog"
+      ],
+      "max_words": 35
+    }
+  },
+  {
+    "task_id": "summarization_002",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "deployment",
+        "json",
+        "empty"
+      ],
+      "max_words": 35
+    }
+  },
+  {
+    "task_id": "summarization_003",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "students",
+        "soil",
+        "shade"
+      ],
+      "max_words": 35
+    }
+  },
+  {
+    "task_id": "summarization_004",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "library",
+        "weekend",
+        "study"
+      ],
+      "max_words": 35
+    }
+  },
+  {
+    "task_id": "summarization_005",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "bakery",
+        "suppliers",
+        "prices"
+      ],
+      "max_words": 35
+    }
+  },
+  {
+    "task_id": "ner_001",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "maya patel",
+        "berlin",
+        "orion labs",
+        "april"
+      ]
+    }
+  },
+  {
+    "task_id": "ner_002",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "carlos rivera",
+        "northstar bank",
+        "toronto"
+      ]
+    }
+  },
+  {
+    "task_id": "ner_003",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "priya shah",
+        "greenfield school",
+        "mumbai"
+      ]
+    }
+  },
+  {
+    "task_id": "ner_004",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "river museum",
+        "elena rossi",
+        "florence"
+      ]
+    }
+  },
+  {
+    "task_id": "ner_005",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "omar khan",
+        "atlas robotics",
+        "stanford university"
+      ]
+    }
+  },
+  {
+    "task_id": "code_debugging_001",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "index",
+        "nums[2]"
+      ]
+    }
+  },
+  {
+    "task_id": "code_debugging_002",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "+",
+        "return a + b"
+      ]
+    }
+  },
+  {
+    "task_id": "code_debugging_003",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        ":",
+        "range(3):"
+      ]
+    }
+  },
+  {
+    "task_id": "code_debugging_004",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "case",
+        "name"
+      ]
+    }
+  },
+  {
+    "task_id": "code_debugging_005",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "valueerror",
+        "numeric"
+      ]
+    }
+  },
+  {
+    "task_id": "logic_001",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "yes"
+    }
+  },
+  {
+    "task_id": "logic_002",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "no"
+    }
+  },
+  {
+    "task_id": "logic_003",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "mina"
+    }
+  },
+  {
+    "task_id": "logic_004",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "red"
+    }
+  },
+  {
+    "task_id": "logic_005",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "no"
+    }
+  },
+  {
+    "task_id": "code_generation_001",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def double",
+        "* 2"
+      ]
+    }
+  },
+  {
+    "task_id": "code_generation_002",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def is_even",
+        "% 2"
+      ]
+    }
+  },
+  {
+    "task_id": "code_generation_003",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def greet",
+        "hello"
+      ]
+    }
+  },
+  {
+    "task_id": "code_generation_004",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def first_item",
+        "[0]"
+      ]
+    }
+  },
+  {
+    "task_id": "code_generation_005",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def square",
+        "n * n"
+      ]
+    }
+  }
+]
