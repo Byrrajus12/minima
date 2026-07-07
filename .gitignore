@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+dist/
+build/
+output/*
+input/tasks.json
+eval/reports/
+.DS_Store
