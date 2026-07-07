@@ -1,11 +1,31 @@
-.env
+# Python
 __pycache__/
 *.pyc
 .pytest_cache/
-.coverage
+.venv/
+venv/
+.env
+
+# Local-only hackathon/Codex context
+local_context/
+docs/*.local.md
+docs/*PRIVATE*.md
+
+# Runtime input/output
+input/tasks.json
+output/*
+!output/.gitkeep
+
+# Eval artifacts
+eval/reports/
+*.log
+
+# Build artifacts
 dist/
 build/
-output/*
-input/tasks.json
-eval/reports/
+*.egg-info/
+
+# OS/editor
 .DS_Store
+.vscode/
+.idea/
