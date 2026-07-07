@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import json
+import socket
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
+from typing import Any
 
 from .config import Config
 from .prompts import SYSTEM_PROMPT, build_user_prompt
@@ -13,6 +15,44 @@ from .prompts import SYSTEM_PROMPT, build_user_prompt
 
 class FireworksClientError(RuntimeError):
     """Raised when a Fireworks request fails."""
+
+
+def _decode_error_body(exc: urllib.error.HTTPError) -> str:
+    detail = exc.read().decode("utf-8", errors="replace").strip()
+    if not detail:
+        return "no response body"
+    return detail[:1000]
+
+
+def _parse_chat_response(response_body: str) -> str:
+    if not response_body.strip():
+        raise FireworksClientError("Fireworks returned an empty response.")
+
+    try:
+        data: Any = json.loads(response_body)
+    except json.JSONDecodeError as exc:
+        raise FireworksClientError("Fireworks returned malformed JSON.") from exc
+
+    if not isinstance(data, dict):
+        raise FireworksClientError("Fireworks response was not a JSON object.")
+
+    choices = data.get("choices")
+    if not isinstance(choices, list) or not choices:
+        raise FireworksClientError("Fireworks response did not include choices.")
+
+    first_choice = choices[0]
+    if not isinstance(first_choice, dict):
+        raise FireworksClientError("Fireworks choice did not match chat format.")
+
+    message = first_choice.get("message")
+    if not isinstance(message, dict):
+        raise FireworksClientError("Fireworks response did not include a chat message.")
+
+    answer = message.get("content")
+    if not isinstance(answer, str) or not answer.strip():
+        raise FireworksClientError("Fireworks returned an empty answer.")
+
+    return answer.strip()
 
 
 @dataclass(frozen=True)
@@ -54,19 +94,11 @@ class FireworksClient:
             ) as response:
                 response_body = response.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
-            detail = exc.read().decode("utf-8", errors="replace")
+            detail = _decode_error_body(exc)
             raise FireworksClientError(f"Fireworks HTTP {exc.code}: {detail}") from exc
         except urllib.error.URLError as exc:
             raise FireworksClientError(f"Fireworks request failed: {exc.reason}") from exc
-        except TimeoutError as exc:
+        except (TimeoutError, socket.timeout) as exc:
             raise FireworksClientError("Fireworks request timed out.") from exc
 
-        try:
-            data = json.loads(response_body)
-            answer = data["choices"][0]["message"]["content"]
-        except (KeyError, IndexError, TypeError, json.JSONDecodeError) as exc:
-            raise FireworksClientError("Fireworks response did not match chat format.") from exc
-
-        if not isinstance(answer, str) or not answer.strip():
-            raise FireworksClientError("Fireworks returned an empty answer.")
-        return answer.strip()
+        return _parse_chat_response(response_body)

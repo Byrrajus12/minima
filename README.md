@@ -69,3 +69,18 @@ export ALLOWED_MODELS="model-from-hackathon-allowlist"
 ```
 
 The smoke test runs local JSON IO, validates JSON, builds a linux/amd64 Docker image, runs it with mounted `/input` and `/output`, validates Docker output JSON, and checks that `/app/local_context` is absent from the image.
+
+## Fireworks Connectivity Check
+
+Run only after all required Fireworks environment variables are set. The check sends one minimal request through the same client used by the app and does not print secret values.
+
+```bash
+./scripts/fireworks_check.sh
+```
+
+PowerShell:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m minima.fireworks_check
+```
