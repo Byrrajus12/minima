@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from .config import Config
-from .prompts import SYSTEM_PROMPT, build_user_prompt
+from .prompts import build_user_prompt
 
 
 class FireworksClientError(RuntimeError):
@@ -59,17 +59,19 @@ def _parse_chat_response(response_body: str) -> str:
 class FireworksClient:
     config: Config
 
-    def answer(self, prompt: str, category: str) -> str:
+    def answer(self, prompt: str, category: str, model: str | None = None) -> str:
         if self.config.placeholder_mode:
             return (
                 "[LOCAL TEST PLACEHOLDER - Fireworks env vars not set] "
                 f"category={category}; prompt_chars={len(prompt)}"
             )
 
+        if model is None:
+            model = self.config.model
+
         payload = {
-            "model": self.config.model,
+            "model": model,
             "messages": [
-                {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": build_user_prompt(category, prompt)},
             ],
             "temperature": 0.1,

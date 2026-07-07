@@ -5,6 +5,8 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass
 
+from .model_selector import parse_allowed_models
+
 
 class ConfigError(ValueError):
     """Raised when runtime configuration is incomplete or invalid."""
@@ -25,16 +27,10 @@ class Config:
         return self.allowed_models[0]
 
 
-def _split_models(raw: str | None) -> tuple[str, ...]:
-    if not raw:
-        return ()
-    return tuple(model.strip() for model in raw.split(",") if model.strip())
-
-
 def load_config() -> Config:
     api_key = os.getenv("FIREWORKS_API_KEY")
     base_url = os.getenv("FIREWORKS_BASE_URL")
-    allowed_models = _split_models(os.getenv("ALLOWED_MODELS"))
+    allowed_models = parse_allowed_models(os.getenv("ALLOWED_MODELS"))
 
     any_fireworks_env = any([api_key, base_url, allowed_models])
     if not any_fireworks_env:

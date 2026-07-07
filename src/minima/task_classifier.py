@@ -21,8 +21,6 @@ CATEGORIES = (
 def classify_task(prompt: str) -> str:
     text = prompt.lower()
 
-    if re.search(r"\b(sum|calculate|solve|evaluate|product|difference|quotient)\b", text):
-        return "math"
     if re.search(r"\b(sentiment|positive|negative|neutral)\b", text):
         return "sentiment"
     if re.search(r"\b(summarize|summary|tl;dr|condense)\b", text):
@@ -33,7 +31,17 @@ def classify_task(prompt: str) -> str:
         return "code_debugging"
     if re.search(r"\b(write code|generate code|implement|function|class|script)\b", text):
         return "code_generation"
-    if re.search(r"\b(if all|therefore|deduce|logic|true or false|which statement)\b", text):
+    if re.search(
+        r"\b(sum|calculate|solve|evaluate|product|difference|quotient|"
+        r"multiplied|divided|plus|minus|times|costs?|how much)\b",
+        text,
+    ):
+        return "math"
+    if re.search(
+        r"\b(if all|if no|if the|therefore|deduce|logic|true or false|"
+        r"which statement|taller than|shorter than|contains only|can it be)\b",
+        text,
+    ):
         return "logic"
     if re.search(r"\b(who|what|when|where|why|which|capital|define)\b", text):
         return "factual"

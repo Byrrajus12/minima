@@ -1,27 +1,21 @@
-"""Compact prompts for baseline Fireworks calls."""
+"""Compact prompts for Fireworks calls."""
 
 from __future__ import annotations
 
 
-SYSTEM_PROMPT = (
-    "You are minima, a concise benchmark agent. Answer in English only. "
-    "Return only the answer, with no logs or JSON wrapper."
-)
-
-
 CATEGORY_HINTS = {
-    "factual": "Answer the factual question directly.",
-    "math": "Solve carefully and give the final answer.",
-    "sentiment": "Classify sentiment as positive, negative, neutral, or mixed, with a short reason if useful.",
-    "summarization": "Summarize the text briefly and faithfully.",
-    "ner": "Extract named entities and group them by type.",
-    "code_debugging": "Identify the bug and provide the minimal fix.",
-    "logic": "Reason step by step internally, then give the conclusion.",
-    "code_generation": "Provide correct, minimal code and any essential note.",
-    "unknown": "Answer the user task as accurately and concisely as possible.",
+    "factual": "Answer directly in 1-3 concise sentences.",
+    "math": "Give the final answer with minimal necessary explanation. Include units when implied.",
+    "sentiment": "Return one label (positive, negative, neutral, or mixed) plus a brief justification.",
+    "summarization": "Summarize faithfully. Honor any requested length or format.",
+    "ner": "Extract named entities with concise labels such as person, organization, location, date.",
+    "code_debugging": "Provide corrected code first. Add a short bug note only if helpful.",
+    "logic": "Give the conclusion with minimal reasoning. Satisfy all constraints.",
+    "code_generation": "Provide correct, well-structured code first. Avoid extra prose unless requested.",
+    "unknown": "Answer accurately and concisely. Preserve any requested format.",
 }
 
 
 def build_user_prompt(category: str, prompt: str) -> str:
     hint = CATEGORY_HINTS.get(category, CATEGORY_HINTS["unknown"])
-    return f"Task type: {category}\nInstruction: {hint}\n\nTask:\n{prompt}"
+    return f"{hint}\n\nTask:\n{prompt}\n\nAnswer only; no JSON wrapper."
