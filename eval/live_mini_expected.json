@@ -1,0 +1,68 @@
+[
+  {
+    "task_id": "live_factual_001",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": ["nairobi"]
+    }
+  },
+  {
+    "task_id": "live_math_001",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 24,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "live_sentiment_001",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "mixed"
+    }
+  },
+  {
+    "task_id": "live_summarization_001",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": ["bus", "commute", "routes"],
+      "max_words": 35
+    }
+  },
+  {
+    "task_id": "live_ner_001",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": ["Elena Morris", "BrightWave Labs", "Lisbon", "March 12"]
+    }
+  },
+  {
+    "task_id": "live_code_debugging_001",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": ["+=", "total += n"]
+    }
+  },
+  {
+    "task_id": "live_logic_001",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "yes"
+    }
+  },
+  {
+    "task_id": "live_code_generation_001",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": ["def triple", "* 3"]
+    }
+  }
+]

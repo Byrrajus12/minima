@@ -1,0 +1,34 @@
+[
+  {
+    "task_id": "live_factual_001",
+    "prompt": "What is the capital city of Kenya?"
+  },
+  {
+    "task_id": "live_math_001",
+    "prompt": "Calculate: A box has 6 bags with 4 marbles each. How many marbles are there?"
+  },
+  {
+    "task_id": "live_sentiment_001",
+    "prompt": "Classify the sentiment: The update fixed the crash, but the app still opens slowly."
+  },
+  {
+    "task_id": "live_summarization_001",
+    "prompt": "Summarize in one sentence: The city opened a new bus lane downtown, reduced average commute times, and plans to add more routes next spring."
+  },
+  {
+    "task_id": "live_ner_001",
+    "prompt": "Extract named entities: Elena Morris met with BrightWave Labs in Lisbon on March 12."
+  },
+  {
+    "task_id": "live_code_debugging_001",
+    "prompt": "Debug this Python code and state the fix: total = 0; for n in [1,2,3]: total = n; print(total)"
+  },
+  {
+    "task_id": "live_logic_001",
+    "prompt": "If all ceramic mugs are fragile and this cup is a ceramic mug, is this cup fragile?"
+  },
+  {
+    "task_id": "live_code_generation_001",
+    "prompt": "Write a Python function named triple that returns its input multiplied by 3."
+  }
+]
