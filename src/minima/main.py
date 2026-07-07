@@ -46,7 +46,7 @@ def run(input_path: Path, output_path: Path) -> int:
 
     results: list[dict[str, str]] = []
     for task in tasks:
-        answer = router.answer(task["prompt"])
+        answer = router.answer(task["prompt"], task_id=task["task_id"])
         results.append({"task_id": task["task_id"], "answer": answer})
 
     write_results(output_path, results)
