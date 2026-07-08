@@ -9,7 +9,7 @@ CATEGORY_HINTS = {
     "sentiment": "Classify as positive, negative, neutral, or mixed. Add a short reason only if the requested format allows it.",
     "summarization": "Preserve the central facts and obey exact format constraints.",
     "ner": "List all named entities with their types.",
-    "code_debugging": "Provide corrected code as plain code and explain the bug briefly only if the requested format allows it.",
+    "code_debugging": "Return only the corrected code unless the task explicitly asks for an explanation. Make the smallest possible fix, preserve the original structure and variable names, and use idiomatic in-place updates such as += for accumulator bugs.",
     "logic": "Reason through the constraints and answer clearly.",
     "code_generation": "Provide complete runnable code that satisfies the spec. Use plain code only; do not add Markdown fences or explanation unless requested.",
     "unknown": "Answer accurately and preserve any requested format.",
