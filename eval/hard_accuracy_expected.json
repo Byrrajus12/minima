@@ -1,0 +1,77 @@
+[
+  {
+    "task_id": "hard_math_multi_step_001",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 15,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "hard_sentiment_contrast_001",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "mixed"
+    }
+  },
+  {
+    "task_id": "hard_summarization_one_sentence_001",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "factories",
+        "river",
+        "cleanup",
+        "fines"
+      ],
+      "max_words": 35
+    }
+  },
+  {
+    "task_id": "hard_ner_mixed_001",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "Priya Shah",
+        "Atlas Robotics",
+        "Daniel Kim",
+        "Toronto",
+        "July 9"
+      ]
+    }
+  },
+  {
+    "task_id": "hard_code_debugging_001",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "s += n",
+        "return s"
+      ]
+    }
+  },
+  {
+    "task_id": "hard_logic_constraints_001",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "no"
+    }
+  },
+  {
+    "task_id": "hard_code_generation_edge_001",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def safe_first",
+        "default"
+      ]
+    }
+  }
+]

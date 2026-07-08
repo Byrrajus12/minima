@@ -1,0 +1,30 @@
+[
+  {
+    "task_id": "hard_math_multi_step_001",
+    "prompt": "Calculate: A store sells 3 notebooks at $4 each and 2 pens at $1.50 each. What is the total cost?"
+  },
+  {
+    "task_id": "hard_sentiment_contrast_001",
+    "prompt": "Classify the sentiment: The camera takes sharp photos, but the battery drains quickly and support was frustrating."
+  },
+  {
+    "task_id": "hard_summarization_one_sentence_001",
+    "prompt": "Summarize in exactly one sentence: City inspectors found that two factories had been dumping waste into the river for months. Officials ordered immediate cleanup, daily water testing, and fines for both companies."
+  },
+  {
+    "task_id": "hard_ner_mixed_001",
+    "prompt": "Extract named entities with types: Priya Shah from Atlas Robotics met Daniel Kim in Toronto on July 9."
+  },
+  {
+    "task_id": "hard_code_debugging_001",
+    "prompt": "Debug this Python function so it returns the sum of all numbers:\n\ndef total(nums):\n    s = 0\n    for n in nums:\n        s = n\n    return s"
+  },
+  {
+    "task_id": "hard_logic_constraints_001",
+    "prompt": "Logic: If every blue card is marked and no marked card is blank, can a blue card be blank?"
+  },
+  {
+    "task_id": "hard_code_generation_edge_001",
+    "prompt": "Write a Python function safe_first(items, default=None) that returns the first item, or default when items is empty."
+  }
+]
