@@ -1,6 +1,6 @@
 # minima
 
-Baseline agent for the AMD Developer Hackathon Track 1 task format.
+Compact Fireworks model-routing agent for JSON task evaluation.
 
 The container reads `/input/tasks.json`, writes `/output/results.json`, and exits with code 0 when the run succeeds.
 
@@ -28,7 +28,7 @@ Runtime Fireworks settings are read from environment variables:
 - `FIREWORKS_BASE_URL`
 - `ALLOWED_MODELS`
 
-`ALLOWED_MODELS` is a comma-separated list. The agent uses the first listed model and never hardcodes model IDs.
+`ALLOWED_MODELS` is a comma-separated list. The agent selects only from those exact model strings and never hardcodes model IDs.
 
 When none of these variables are set, minima uses a deterministic placeholder answer marked `LOCAL TEST PLACEHOLDER`. This mode is for local JSON IO smoke tests only. If any Fireworks setting is provided, all required settings must be present and real Fireworks calls are used.
 
@@ -58,9 +58,17 @@ With Fireworks enabled:
 ```bash
 export FIREWORKS_API_KEY="..."
 export FIREWORKS_BASE_URL="https://..."
-export ALLOWED_MODELS="model-from-hackathon-allowlist"
+export ALLOWED_MODELS="model-from-allowlist"
 ./scripts/run_docker.sh
 ```
+
+## Final Verification
+
+```bash
+./scripts/final_verify.sh
+```
+
+The verification script runs local JSON checks, Docker checks, ignore checks, and image contents checks without printing secret values. If all Fireworks environment variables are present, it also runs the live mini evaluation.
 
 ## Smoke Test
 

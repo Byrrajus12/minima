@@ -6,7 +6,7 @@ __pycache__/
 venv/
 .env
 
-# Local-only hackathon/Codex context
+# Local-only context
 local_context/
 docs/*.local.md
 docs/*PRIVATE*.md
@@ -15,6 +15,7 @@ docs/*PRIVATE*.md
 input/tasks.json
 output/*
 !output/.gitkeep
+.final_verify/
 
 # Eval artifacts
 eval/reports/*
