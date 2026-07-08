@@ -80,16 +80,21 @@ def _safe_fallback_answer(category: str) -> str:
     return "Unable to determine."
 
 
+def _local_solver_enabled() -> bool:
+    return os.getenv("MINIMA_ENABLE_LOCAL_SOLVER") == "1"
+
+
 @dataclass(frozen=True)
 class Router:
     client: FireworksClient
 
     def answer(self, prompt: str, task_id: str | None = None) -> str:
         category = classify_task(prompt)
-        local_answer = solve_local(category, prompt)
-        if local_answer is not None:
-            _log_routing(task_id, category, f"local:{category}", retry=0)
-            return local_answer
+        if _local_solver_enabled():
+            local_answer = solve_local(category, prompt)
+            if local_answer is not None:
+                _log_routing(task_id, category, f"local:{category}", retry=0)
+                return local_answer
 
         if self.client.config.placeholder_mode:
             _log_routing(task_id, category, "placeholder", retry=0)

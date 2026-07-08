@@ -4,15 +4,15 @@ from __future__ import annotations
 
 
 CATEGORY_HINTS = {
-    "factual": "Answer only.",
-    "math": "Final answer only; add units if needed.",
-    "sentiment": "Return one label (positive, negative, neutral, or mixed) plus a brief justification.",
-    "summarization": "Summarize as requested; no intro.",
-    "ner": "List entities compactly as Type: value.",
-    "code_debugging": "Provide corrected code first. Add a short bug note only if helpful.",
-    "logic": "Answer first; minimal reason only if needed.",
-    "code_generation": "Provide correct, well-structured code first. Avoid extra prose unless requested.",
-    "unknown": "Answer concisely; keep requested format.",
+    "factual": "Answer directly with the key fact. Avoid extra rambling.",
+    "math": "Compute carefully. Return the final answer clearly; include minimal calculation if helpful.",
+    "sentiment": "Label as positive, negative, neutral, or mixed, with one short reason.",
+    "summarization": "Summarize faithfully and obey any requested sentence or length constraint.",
+    "ner": "Extract all named entities and label their types clearly.",
+    "code_debugging": "Identify the bug and provide corrected code.",
+    "logic": "Satisfy all constraints and answer clearly.",
+    "code_generation": "Provide complete correct code only, with brief explanation only if requested.",
+    "unknown": "Answer accurately and concisely. Preserve any requested format.",
 }
 
 

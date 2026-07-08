@@ -57,15 +57,15 @@ def _parse_chat_response(response_body: str) -> str:
 
 def _max_tokens_for_category(category: str) -> int:
     return {
-        "factual": 96,
-        "math": 96,
+        "factual": 192,
+        "math": 192,
         "sentiment": 128,
-        "summarization": 192,
-        "ner": 192,
-        "logic": 96,
-        "code_debugging": 512,
-        "code_generation": 512,
-    }.get(category, 192)
+        "summarization": 256,
+        "ner": 256,
+        "logic": 192,
+        "code_debugging": 768,
+        "code_generation": 768,
+    }.get(category, 256)
 
 
 @dataclass(frozen=True)

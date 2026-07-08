@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 
-CODE_CATEGORIES = {"code_generation", "code_debugging"}
 SIMPLE_CATEGORIES = {"factual", "sentiment", "ner", "summarization"}
 
 
@@ -90,8 +89,6 @@ def select_model_candidates(category: str, allowed_models: tuple[str, ...]) -> t
     gemma = _matching(allowed_models, "gemma")
     other = _without_family(allowed_models, "kimi", "minimax", "gemma")
 
-    if category in CODE_CATEGORIES:
-        return _dedupe(kimi + minimax + other + gemma)
     return _dedupe(minimax + kimi + other + gemma)
 
 
@@ -103,9 +100,7 @@ def select_fallback_model(
     if len(allowed_models) < 2:
         return None
 
-    if category in CODE_CATEGORIES:
-        preferences = ("kimi", "minimax")
-    elif category in {"math", "logic", "unknown"}:
+    if category in {"math", "logic", "unknown"}:
         preferences = ("minimax", "kimi")
     else:
         preferences = ("minimax", "kimi")
