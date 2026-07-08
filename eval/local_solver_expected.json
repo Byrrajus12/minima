@@ -1,0 +1,60 @@
+[
+  {
+    "task_id": "local_math_expression",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 42,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "local_math_word_problem",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 24,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "local_sentiment_mixed",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "mixed"
+    }
+  },
+  {
+    "task_id": "local_sentiment_contrast_mixed",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "mixed"
+    }
+  },
+  {
+    "task_id": "local_ner_simple",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": ["Elena Morris", "BrightWave Labs", "Lisbon", "March 12"]
+    }
+  },
+  {
+    "task_id": "local_logic_simple",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "yes"
+    }
+  },
+  {
+    "task_id": "local_logic_negative_syllogism",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "no"
+    }
+  }
+]

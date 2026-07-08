@@ -1,0 +1,30 @@
+[
+  {
+    "task_id": "local_math_expression",
+    "prompt": "Calculate 17 + 25."
+  },
+  {
+    "task_id": "local_math_word_problem",
+    "prompt": "Calculate: A box has 6 bags with 4 marbles each. How many marbles are there?"
+  },
+  {
+    "task_id": "local_sentiment_mixed",
+    "prompt": "Classify the sentiment: The update fixed the crash, but the app still opens slowly."
+  },
+  {
+    "task_id": "local_sentiment_contrast_mixed",
+    "prompt": "Classify the sentiment: The battery life is great, but the screen scratches too easily."
+  },
+  {
+    "task_id": "local_ner_simple",
+    "prompt": "Extract named entities: Elena Morris met with BrightWave Labs in Lisbon on March 12."
+  },
+  {
+    "task_id": "local_logic_simple",
+    "prompt": "If all ceramic mugs are fragile and this cup is a ceramic mug, is this cup fragile?"
+  },
+  {
+    "task_id": "local_logic_negative_syllogism",
+    "prompt": "If no reptiles are mammals and this lizard is a reptile, can this lizard be a mammal?"
+  }
+]

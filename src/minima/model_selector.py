@@ -25,6 +25,33 @@ def _first_matching(models: tuple[str, ...], *needles: str) -> str | None:
     return None
 
 
+def _matching(models: tuple[str, ...], *needles: str) -> list[str]:
+    return [
+        model
+        for model in models
+        if any(needle in model.casefold() for needle in needles)
+    ]
+
+
+def _without_family(models: tuple[str, ...], *needles: str) -> list[str]:
+    return [
+        model
+        for model in models
+        if not any(needle in model.casefold() for needle in needles)
+    ]
+
+
+def _dedupe(models: list[str]) -> tuple[str, ...]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for model in models:
+        if model in seen:
+            continue
+        seen.add(model)
+        ordered.append(model)
+    return tuple(ordered)
+
+
 def _cheapest_gemma(models: tuple[str, ...]) -> str | None:
     gemmas = [model for model in models if _contains(model, "gemma")]
     if not gemmas:
@@ -51,17 +78,21 @@ def select_model(category: str, allowed_models: tuple[str, ...]) -> str:
     if not allowed_models:
         raise ValueError("At least one allowed model is required.")
 
-    kimi = _first_matching(allowed_models, "kimi")
-    minimax = _first_matching(allowed_models, "minimax")
-    gemma = _cheapest_gemma(allowed_models)
+    return select_model_candidates(category, allowed_models)[0]
+
+
+def select_model_candidates(category: str, allowed_models: tuple[str, ...]) -> tuple[str, ...]:
+    if not allowed_models:
+        raise ValueError("At least one allowed model is required.")
+
+    kimi = _matching(allowed_models, "kimi")
+    minimax = _matching(allowed_models, "minimax")
+    gemma = _matching(allowed_models, "gemma")
+    other = _without_family(allowed_models, "kimi", "minimax", "gemma")
 
     if category in CODE_CATEGORIES:
-        return kimi or minimax or allowed_models[0]
-    if category in {"math", "logic"}:
-        return minimax or kimi or allowed_models[0]
-    if category in SIMPLE_CATEGORIES:
-        return gemma or minimax or allowed_models[0]
-    return minimax or allowed_models[0]
+        return _dedupe(kimi + minimax + other + gemma)
+    return _dedupe(minimax + kimi + other + gemma)
 
 
 def select_fallback_model(
