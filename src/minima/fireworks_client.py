@@ -82,7 +82,13 @@ def _rejects_reasoning_effort(detail: str) -> bool:
 class FireworksClient:
     config: Config
 
-    def answer(self, prompt: str, category: str, model: str | None = None) -> str:
+    def answer(
+        self,
+        prompt: str,
+        category: str,
+        model: str | None = None,
+        retry_instruction: str | None = None,
+    ) -> str:
         if self.config.placeholder_mode:
             return (
                 "[LOCAL TEST PLACEHOLDER - Fireworks env vars not set] "
@@ -96,6 +102,7 @@ class FireworksClient:
             prompt=prompt,
             category=category,
             model=model,
+            retry_instruction=retry_instruction,
             include_reasoning_effort=model not in _REASONING_EFFORT_UNSUPPORTED_MODELS,
         )
         return _parse_chat_response(response_body)
@@ -105,12 +112,20 @@ class FireworksClient:
         prompt: str,
         category: str,
         model: str,
+        retry_instruction: str | None,
         include_reasoning_effort: bool,
     ) -> str:
         payload = {
             "model": model,
             "messages": [
-                {"role": "user", "content": build_user_prompt(category, prompt)},
+                {
+                    "role": "user",
+                    "content": build_user_prompt(
+                        category,
+                        prompt,
+                        retry_instruction=retry_instruction,
+                    ),
+                },
             ],
             "temperature": 0.1,
             "max_tokens": _max_tokens_for_category(category),
@@ -143,6 +158,7 @@ class FireworksClient:
                     prompt=prompt,
                     category=category,
                     model=model,
+                    retry_instruction=retry_instruction,
                     include_reasoning_effort=False,
                 )
             raise FireworksClientError(f"Fireworks HTTP {exc.code}: {detail}") from exc

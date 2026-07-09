@@ -25,6 +25,14 @@ UNIVERSAL_INSTRUCTIONS = (
 )
 
 
-def build_user_prompt(category: str, prompt: str) -> str:
+def build_user_prompt(
+    category: str,
+    prompt: str,
+    retry_instruction: str | None = None,
+) -> str:
     hint = CATEGORY_HINTS.get(category, CATEGORY_HINTS["unknown"])
-    return f"{UNIVERSAL_INSTRUCTIONS}\n{hint}\n\nTask:\n{prompt}\n\nAnswer only; no JSON wrapper."
+    retry_text = f"\n{retry_instruction}" if retry_instruction else ""
+    return (
+        f"{UNIVERSAL_INSTRUCTIONS}{retry_text}\n{hint}\n\n"
+        f"Task:\n{prompt}\n\nAnswer only; no JSON wrapper."
+    )
