@@ -1,0 +1,162 @@
+[
+  {
+    "task_id": "deep_factual_001",
+    "prompt": "What capital city sits on the Tagus River and is the capital of Portugal?"
+  },
+  {
+    "task_id": "deep_factual_002",
+    "prompt": "What body of water separates Saudi Arabia from northeastern Africa?"
+  },
+  {
+    "task_id": "deep_factual_003",
+    "prompt": "In simple terms, what does a thermostat measure to decide whether heating or cooling is needed?"
+  },
+  {
+    "task_id": "deep_factual_004",
+    "prompt": "Name the process plants use to convert light, water, and carbon dioxide into sugar."
+  },
+  {
+    "task_id": "deep_factual_005",
+    "prompt": "Which planet is known for a prominent ring system and has the moon Titan?"
+  },
+  {
+    "task_id": "deep_math_001",
+    "prompt": "Calculate: A shop had 48 notebooks, sold 17, then received 3 boxes with 12 notebooks each. How many notebooks are now in stock?"
+  },
+  {
+    "task_id": "deep_math_002",
+    "prompt": "Calculate the sale price: a $80 jacket is discounted by 25%, then a $5 coupon is applied."
+  },
+  {
+    "task_id": "deep_math_003",
+    "prompt": "Compute the weighted average of scores 90 with weight 2 and 75 with weight 1."
+  },
+  {
+    "task_id": "deep_math_004",
+    "prompt": "Solve for the projected count: 200 users grow by 10% each month for two months. What is the final user count?"
+  },
+  {
+    "task_id": "deep_math_005",
+    "prompt": "How many minutes are needed for 7 machines to make 84 parts if each machine makes 2 parts per minute?"
+  },
+  {
+    "task_id": "deep_sentiment_001",
+    "prompt": "Classify the sentiment: The camera is sharp and fast, but the battery drains quickly and the case feels cheap."
+  },
+  {
+    "task_id": "deep_sentiment_002",
+    "prompt": "Classify the sentiment: The installation was effortless, the dashboard is clear, and support answered within minutes."
+  },
+  {
+    "task_id": "deep_sentiment_003",
+    "prompt": "Classify the sentiment: The package arrived broken, the replacement was delayed, and no one replied to my emails."
+  },
+  {
+    "task_id": "deep_sentiment_004",
+    "prompt": "Classify the sentiment: The meeting starts at 2 PM and the agenda has three items."
+  },
+  {
+    "task_id": "deep_sentiment_005",
+    "prompt": "Classify the sentiment as positive, negative, neutral, or mixed: The soup tasted great, although the service was slow."
+  },
+  {
+    "task_id": "deep_summarization_001",
+    "prompt": "Summarize in one sentence: Riverdale installed flood sensors along the north bank, trained emergency volunteers, and will test sirens next Friday before the rainy season."
+  },
+  {
+    "task_id": "deep_summarization_002",
+    "prompt": "Summarize in exactly two bullets: The library extended evening hours, added a makerspace with 3D printers, and created weekend coding workshops for teens."
+  },
+  {
+    "task_id": "deep_summarization_003",
+    "prompt": "Summarize in under 20 words: The bakery now uses solar ovens for morning bread, reducing gas costs while keeping prices unchanged."
+  },
+  {
+    "task_id": "deep_summarization_004",
+    "prompt": "Summarize the main takeaway: Metro Health opened a mobile clinic, served 600 patients in two weeks, and plans monthly rural visits."
+  },
+  {
+    "task_id": "deep_summarization_005",
+    "prompt": "Summarize briefly: The school board approved a garden curriculum after parents donated tools, teachers volunteered training time, and students requested outdoor science labs."
+  },
+  {
+    "task_id": "deep_ner_001",
+    "prompt": "Extract named entities: Maya Chen from Orion Foods visited Nairobi on April 3."
+  },
+  {
+    "task_id": "deep_ner_002",
+    "prompt": "List the people, organizations, locations, and dates mentioned: Carlos Rivera briefed Northstar Bank in Madrid on June 18."
+  },
+  {
+    "task_id": "deep_ner_003",
+    "prompt": "Identify named entities: On September 5, Dr. Asha Patel joined GreenGrid Energy for a forum in Vancouver."
+  },
+  {
+    "task_id": "deep_ner_004",
+    "prompt": "Find entities: Tomorrow in this report means July 10, 2026, when Lena Ortiz will meet Harbor Analytics in Boston."
+  },
+  {
+    "task_id": "deep_ner_005",
+    "prompt": "Extract named entities from this sentence: Quantum Forge hired Daniel Wu in Singapore on January 21."
+  },
+  {
+    "task_id": "deep_code_debugging_001",
+    "prompt": "Debug this Python code and provide the corrected code: def max_value(items):\n    best = items[0]\n    for item in items:\n        return best\nIt should return the largest item."
+  },
+  {
+    "task_id": "deep_code_debugging_002",
+    "prompt": "Fix the off-by-one bug in this function: def count_down(n):\n    return list(range(n, 0, -1))\nIt should include 0 at the end."
+  },
+  {
+    "task_id": "deep_code_debugging_003",
+    "prompt": "Correct this Python code that uses a mutable default: def add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags"
+  },
+  {
+    "task_id": "deep_code_debugging_004",
+    "prompt": "Debug this late-binding Python code: funcs=[]\nfor i in range(3):\n    funcs.append(lambda: i)\nEach lambda should return its own i."
+  },
+  {
+    "task_id": "deep_code_debugging_005",
+    "prompt": "Fix this generator exhaustion bug: nums = (n for n in [1, 2, 3])\nfirst = sum(nums)\nsecond = sum(nums)\nBoth sums should be 6."
+  },
+  {
+    "task_id": "deep_logic_001",
+    "prompt": "Logic puzzle: Alice is older than Ben. Ben is older than Cara. Who is the youngest?"
+  },
+  {
+    "task_id": "deep_logic_002",
+    "prompt": "If all bronze keys open the archive and this key is bronze, does this key open the archive?"
+  },
+  {
+    "task_id": "deep_logic_003",
+    "prompt": "Constraint puzzle: The red box is left of the blue box. The green box is right of the blue box. Which box is in the middle?"
+  },
+  {
+    "task_id": "deep_logic_004",
+    "prompt": "Exactly one of Nora and Omar took the last cookie. Nora says Omar took it. Omar says Nora took it. If Nora tells the truth and Omar lies, who took the cookie?"
+  },
+  {
+    "task_id": "deep_logic_005",
+    "prompt": "If no electric scooters are allowed in the lobby and Luna's vehicle is an electric scooter, is Luna's vehicle allowed in the lobby?"
+  },
+  {
+    "task_id": "deep_code_generation_001",
+    "prompt": "Write a Python function named unique_ordered that returns unique items from a list while preserving first-seen order."
+  },
+  {
+    "task_id": "deep_code_generation_002",
+    "prompt": "Implement a Python function named safe_ratio(a, b) that returns None when b is zero, otherwise a / b."
+  },
+  {
+    "task_id": "deep_code_generation_003",
+    "prompt": "Create a Python function named flatten_once that flattens one level of nested lists."
+  },
+  {
+    "task_id": "deep_code_generation_004",
+    "prompt": "Write a Python function named count_words that returns a dictionary of word counts from a list of strings."
+  },
+  {
+    "task_id": "deep_code_generation_005",
+    "prompt": "Generate Python code for a function named first_or_default(items, default=None) that returns the first item or default for an empty input."
+  }
+]

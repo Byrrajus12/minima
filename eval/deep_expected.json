@@ -1,0 +1,417 @@
+[
+  {
+    "task_id": "deep_factual_001",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "Lisbon"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_factual_002",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "Red Sea"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_factual_003",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "temperature"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_factual_004",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "photosynthesis"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_factual_005",
+    "category": "factual",
+    "scoring": {
+      "type": "keywords",
+      "keywords": [
+        "Saturn"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_math_001",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 67,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "deep_math_002",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 55,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "deep_math_003",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 85,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "deep_math_004",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 242,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "deep_math_005",
+    "category": "math",
+    "scoring": {
+      "type": "number",
+      "value": 6,
+      "tolerance": 0
+    }
+  },
+  {
+    "task_id": "deep_sentiment_001",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "mixed"
+    }
+  },
+  {
+    "task_id": "deep_sentiment_002",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "positive"
+    }
+  },
+  {
+    "task_id": "deep_sentiment_003",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "negative"
+    }
+  },
+  {
+    "task_id": "deep_sentiment_004",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "neutral"
+    }
+  },
+  {
+    "task_id": "deep_sentiment_005",
+    "category": "sentiment",
+    "scoring": {
+      "type": "label",
+      "label": "mixed"
+    }
+  },
+  {
+    "task_id": "deep_summarization_001",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "flood",
+        "sensors",
+        "sirens"
+      ],
+      "max_words": 35
+    }
+  },
+  {
+    "task_id": "deep_summarization_002",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "library",
+        "makerspace",
+        "coding"
+      ],
+      "max_words": 55
+    }
+  },
+  {
+    "task_id": "deep_summarization_003",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "bakery",
+        "solar",
+        "costs"
+      ],
+      "max_words": 20
+    }
+  },
+  {
+    "task_id": "deep_summarization_004",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "mobile clinic",
+        "600",
+        "rural"
+      ],
+      "max_words": 35
+    }
+  },
+  {
+    "task_id": "deep_summarization_005",
+    "category": "summarization",
+    "scoring": {
+      "type": "summary",
+      "keywords": [
+        "garden",
+        "parents",
+        "students"
+      ],
+      "max_words": 45
+    }
+  },
+  {
+    "task_id": "deep_ner_001",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "Maya Chen",
+        "Orion Foods",
+        "Nairobi",
+        "April 3"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_ner_002",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "Carlos Rivera",
+        "Northstar Bank",
+        "Madrid",
+        "June 18"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_ner_003",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "September 5",
+        "Asha Patel",
+        "GreenGrid Energy",
+        "Vancouver"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_ner_004",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "July 10, 2026",
+        "Lena Ortiz",
+        "Harbor Analytics",
+        "Boston"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_ner_005",
+    "category": "ner",
+    "scoring": {
+      "type": "entities",
+      "entities": [
+        "Quantum Forge",
+        "Daniel Wu",
+        "Singapore",
+        "January 21"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_code_debugging_001",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def max_value",
+        "return best"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_code_debugging_002",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "range",
+        "-1"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_code_debugging_003",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "None",
+        "tags = []"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_code_debugging_004",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "lambda",
+        "i=i"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_code_debugging_005",
+    "category": "code_debugging",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "list",
+        "sum"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_logic_001",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "Cara"
+    }
+  },
+  {
+    "task_id": "deep_logic_002",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "yes"
+    }
+  },
+  {
+    "task_id": "deep_logic_003",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "blue"
+    }
+  },
+  {
+    "task_id": "deep_logic_004",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "Omar"
+    }
+  },
+  {
+    "task_id": "deep_logic_005",
+    "category": "logic",
+    "scoring": {
+      "type": "label",
+      "label": "no"
+    }
+  },
+  {
+    "task_id": "deep_code_generation_001",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def unique_ordered",
+        "seen"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_code_generation_002",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def safe_ratio",
+        "None"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_code_generation_003",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def flatten_once",
+        "extend"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_code_generation_004",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def count_words",
+        "counts"
+      ]
+    }
+  },
+  {
+    "task_id": "deep_code_generation_005",
+    "category": "code_generation",
+    "scoring": {
+      "type": "substrings",
+      "substrings": [
+        "def first_or_default",
+        "default"
+      ]
+    }
+  }
+]

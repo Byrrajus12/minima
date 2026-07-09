@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import socket
 import sys
 import urllib.error
@@ -28,7 +29,50 @@ def _decode_error_body(exc: urllib.error.HTTPError) -> str:
     return detail[:1000]
 
 
-def _parse_chat_response(response_body: str, category: str, model: str) -> str:
+def _log_usage(
+    data: dict[str, Any],
+    first_choice: dict[str, Any],
+    category: str,
+    model: str,
+    task_id: str | None,
+    reasoning_effort_retry: bool,
+) -> None:
+    if os.getenv("MINIMA_LOG_USAGE") != "1":
+        return
+
+    payload: dict[str, Any] = {
+        "category": category,
+        "model": model,
+        "reasoning_effort_retry": reasoning_effort_retry,
+    }
+    if task_id:
+        payload["task_id"] = task_id
+
+    finish_reason = first_choice.get("finish_reason")
+    if isinstance(finish_reason, str):
+        payload["finish_reason"] = finish_reason
+
+    usage = data.get("usage")
+    if isinstance(usage, dict):
+        for key in ("prompt_tokens", "completion_tokens", "total_tokens"):
+            value = usage.get(key)
+            if isinstance(value, int):
+                payload[key] = value
+
+    print(
+        "minima usage "
+        + json.dumps(payload, ensure_ascii=True, sort_keys=True, separators=(",", ":")),
+        file=sys.stderr,
+    )
+
+
+def _parse_chat_response(
+    response_body: str,
+    category: str,
+    model: str,
+    task_id: str | None = None,
+    reasoning_effort_retry: bool = False,
+) -> str:
     if not response_body.strip():
         raise FireworksClientError("Fireworks returned an empty response.")
 
@@ -61,6 +105,14 @@ def _parse_chat_response(response_body: str, category: str, model: str) -> str:
     if not isinstance(answer, str) or not answer.strip():
         raise FireworksClientError("Fireworks returned an empty answer.")
 
+    _log_usage(
+        data=data,
+        first_choice=first_choice,
+        category=category,
+        model=model,
+        task_id=task_id,
+        reasoning_effort_retry=reasoning_effort_retry,
+    )
     return answer.strip()
 
 
@@ -75,7 +127,13 @@ def _rejects_reasoning_effort(detail: str) -> bool:
 class FireworksClient:
     config: Config
 
-    def answer(self, prompt: str, category: str, model: str | None = None) -> str:
+    def answer(
+        self,
+        prompt: str,
+        category: str,
+        model: str | None = None,
+        task_id: str | None = None,
+    ) -> str:
         if self.config.placeholder_mode:
             return (
                 "[LOCAL TEST PLACEHOLDER - Fireworks env vars not set] "
@@ -85,13 +143,19 @@ class FireworksClient:
         if model is None:
             model = self.config.model
 
-        response_body = self._post_chat_completion(
+        response_body, reasoning_effort_retry = self._post_chat_completion(
             prompt=prompt,
             category=category,
             model=model,
             include_reasoning_effort=model not in _REASONING_EFFORT_UNSUPPORTED_MODELS,
         )
-        return _parse_chat_response(response_body, category=category, model=model)
+        return _parse_chat_response(
+            response_body,
+            category=category,
+            model=model,
+            task_id=task_id,
+            reasoning_effort_retry=reasoning_effort_retry,
+        )
 
     def _post_chat_completion(
         self,
@@ -99,7 +163,7 @@ class FireworksClient:
         category: str,
         model: str,
         include_reasoning_effort: bool,
-    ) -> str:
+    ) -> tuple[str, bool]:
         payload = {
             "model": model,
             "messages": [
@@ -132,16 +196,17 @@ class FireworksClient:
             detail = _decode_error_body(exc)
             if include_reasoning_effort and _rejects_reasoning_effort(detail):
                 _REASONING_EFFORT_UNSUPPORTED_MODELS.add(model)
-                return self._post_chat_completion(
+                response_body, _ = self._post_chat_completion(
                     prompt=prompt,
                     category=category,
                     model=model,
                     include_reasoning_effort=False,
                 )
+                return response_body, True
             raise FireworksClientError(f"Fireworks HTTP {exc.code}: {detail}") from exc
         except urllib.error.URLError as exc:
             raise FireworksClientError(f"Fireworks request failed: {exc.reason}") from exc
         except (TimeoutError, socket.timeout) as exc:
             raise FireworksClientError("Fireworks request timed out.") from exc
 
-        return response_body
+        return response_body, False

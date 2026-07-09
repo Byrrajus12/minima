@@ -67,14 +67,19 @@ class Router:
 
         if self.client.config.placeholder_mode:
             _log_routing(task_id, category, "placeholder", retry=0)
-            return self.client.answer(prompt=prompt, category=category)
+            return self.client.answer(prompt=prompt, category=category, task_id=task_id)
 
         for retry, model in enumerate(
             select_model_candidates(category, self.client.config.allowed_models)
         ):
             _log_routing(task_id, category, model, retry=retry)
             try:
-                answer = self.client.answer(prompt=prompt, category=category, model=model)
+                answer = self.client.answer(
+                    prompt=prompt,
+                    category=category,
+                    model=model,
+                    task_id=task_id,
+                )
             except FireworksClientError:
                 _log_model_failure(task_id, category, model, retry, "client_error")
                 continue
