@@ -17,6 +17,9 @@ class FireworksClientError(RuntimeError):
     """Raised when a Fireworks request fails."""
 
 
+_REASONING_EFFORT_UNSUPPORTED_MODELS: set[str] = set()
+
+
 def _decode_error_body(exc: urllib.error.HTTPError) -> str:
     detail = exc.read().decode("utf-8", errors="replace").strip()
     if not detail:
@@ -68,6 +71,13 @@ def _max_tokens_for_category(category: str) -> int:
     }.get(category, 1024)
 
 
+def _rejects_reasoning_effort(detail: str) -> bool:
+    lowered = detail.casefold()
+    return "reasoning_effort" in lowered or (
+        "reasoning" in lowered and "unsupported" in lowered
+    )
+
+
 @dataclass(frozen=True)
 class FireworksClient:
     config: Config
@@ -82,6 +92,21 @@ class FireworksClient:
         if model is None:
             model = self.config.model
 
+        response_body = self._post_chat_completion(
+            prompt=prompt,
+            category=category,
+            model=model,
+            include_reasoning_effort=model not in _REASONING_EFFORT_UNSUPPORTED_MODELS,
+        )
+        return _parse_chat_response(response_body)
+
+    def _post_chat_completion(
+        self,
+        prompt: str,
+        category: str,
+        model: str,
+        include_reasoning_effort: bool,
+    ) -> str:
         payload = {
             "model": model,
             "messages": [
@@ -90,6 +115,8 @@ class FireworksClient:
             "temperature": 0.1,
             "max_tokens": _max_tokens_for_category(category),
         }
+        if include_reasoning_effort:
+            payload["reasoning_effort"] = "none"
 
         body = json.dumps(payload).encode("utf-8")
         endpoint = f"{self.config.fireworks_base_url}/chat/completions"
@@ -110,10 +137,18 @@ class FireworksClient:
                 response_body = response.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
             detail = _decode_error_body(exc)
+            if include_reasoning_effort and _rejects_reasoning_effort(detail):
+                _REASONING_EFFORT_UNSUPPORTED_MODELS.add(model)
+                return self._post_chat_completion(
+                    prompt=prompt,
+                    category=category,
+                    model=model,
+                    include_reasoning_effort=False,
+                )
             raise FireworksClientError(f"Fireworks HTTP {exc.code}: {detail}") from exc
         except urllib.error.URLError as exc:
             raise FireworksClientError(f"Fireworks request failed: {exc.reason}") from exc
         except (TimeoutError, socket.timeout) as exc:
             raise FireworksClientError("Fireworks request timed out.") from exc
 
-        return _parse_chat_response(response_body)
+        return response_body

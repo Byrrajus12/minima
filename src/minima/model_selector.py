@@ -84,11 +84,25 @@ def select_model_candidates(category: str, allowed_models: tuple[str, ...]) -> t
     if not allowed_models:
         raise ValueError("At least one allowed model is required.")
 
-    kimi = _matching(allowed_models, "kimi")
+    kimi = _matching(allowed_models, "kimi", "code")
     minimax = _matching(allowed_models, "minimax")
-    gemma = _matching(allowed_models, "gemma")
-    other = _without_family(allowed_models, "kimi", "minimax", "gemma")
+    gemma = _matching(allowed_models, "gemma", "cheap", "lite", "small", "flash")
+    other = _without_family(
+        allowed_models,
+        "kimi",
+        "code",
+        "minimax",
+        "gemma",
+        "cheap",
+        "lite",
+        "small",
+        "flash",
+    )
 
+    if category in {"code_debugging", "code_generation"}:
+        return _dedupe(kimi + minimax + other + gemma)
+    if category in {"sentiment", "ner", "summarization"}:
+        return _dedupe(gemma + minimax + kimi + other)
     return _dedupe(minimax + kimi + other + gemma)
 
 
