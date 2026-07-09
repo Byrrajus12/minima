@@ -125,9 +125,9 @@ def select_model_candidates(category: str, allowed_models: tuple[str, ...]) -> t
 
     if category in {"code_debugging", "code_generation"}:
         return _dedupe(code + gemma_mid + minimax + gemma_small + other)
-    if category in {"factual", "math", "sentiment", "ner", "logic"}:
-        return _dedupe(code + gemma_mid + gemma_small + minimax + other)
-    if category in {"summarization", "unknown"}:
+    if category in {"math", "logic"}:
+        return _dedupe(gemma_mid + gemma_small + minimax + code + other)
+    if category in {"sentiment", "ner", "summarization", "factual", "unknown"}:
         return _dedupe(gemma_small + gemma_mid + minimax + code + other)
     return _dedupe(gemma_small + gemma_mid + minimax + code + other)
 
