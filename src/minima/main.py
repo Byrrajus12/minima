@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import traceback
 from pathlib import Path
 from typing import Sequence
 
@@ -46,7 +47,11 @@ def run(input_path: Path, output_path: Path) -> int:
 
     results: list[dict[str, str]] = []
     for task in tasks:
-        answer = router.answer(task["prompt"], task_id=task["task_id"])
+        try:
+            answer = router.answer(task["prompt"], task_id=task["task_id"])
+        except Exception:
+            traceback.print_exc(file=sys.stderr)
+            answer = ""
         results.append({"task_id": task["task_id"], "answer": answer})
 
     write_results(output_path, results)

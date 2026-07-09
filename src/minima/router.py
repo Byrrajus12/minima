@@ -6,17 +6,10 @@ from dataclasses import dataclass
 import os
 import sys
 
-from .answer_validator import is_valid_answer
 from .fireworks_client import FireworksClient, FireworksClientError
 from .local_solver import solve_local
 from .model_selector import select_model_candidates
 from .task_classifier import classify_task
-
-
-STRICT_RETRY_INSTRUCTION = (
-    "The previous answer was invalid or incomplete. Follow the requested format "
-    "exactly and provide the final answer directly."
-)
 
 
 def _log_routing(task_id: str | None, category: str, model: str, retry: int) -> None:
@@ -76,30 +69,19 @@ class Router:
             _log_routing(task_id, category, "placeholder", retry=0)
             return self.client.answer(prompt=prompt, category=category)
 
-        best_non_empty_answer: str | None = None
-        retry_instruction: str | None = None
         for retry, model in enumerate(
             select_model_candidates(category, self.client.config.allowed_models)
         ):
             _log_routing(task_id, category, model, retry=retry)
             try:
-                answer = self.client.answer(
-                    prompt=prompt,
-                    category=category,
-                    model=model,
-                    retry_instruction=retry_instruction,
-                )
+                answer = self.client.answer(prompt=prompt, category=category, model=model)
             except FireworksClientError:
                 _log_model_failure(task_id, category, model, retry, "client_error")
                 continue
-            if answer.strip() and best_non_empty_answer is None:
-                best_non_empty_answer = answer
-            if is_valid_answer(category, prompt, answer):
-                return answer
-            _log_model_failure(task_id, category, model, retry, "invalid_answer")
-            retry_instruction = STRICT_RETRY_INSTRUCTION
+            stripped = answer.strip()
+            if stripped:
+                return stripped
+            _log_model_failure(task_id, category, model, retry, "empty_answer")
 
-        if best_non_empty_answer:
-            return best_non_empty_answer
         _log_model_failure(task_id, category, "all", retry=0, reason="no_model_succeeded")
         return _safe_fallback_answer(category)

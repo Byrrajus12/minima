@@ -4,13 +4,14 @@ from __future__ import annotations
 
 import json
 import socket
+import sys
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from typing import Any
 
 from .config import Config
-from .prompts import build_user_prompt
+from .prompts import build_user_prompt, max_tokens_for_category
 
 
 class FireworksClientError(RuntimeError):
@@ -27,7 +28,7 @@ def _decode_error_body(exc: urllib.error.HTTPError) -> str:
     return detail[:1000]
 
 
-def _parse_chat_response(response_body: str) -> str:
+def _parse_chat_response(response_body: str, category: str, model: str) -> str:
     if not response_body.strip():
         raise FireworksClientError("Fireworks returned an empty response.")
 
@@ -46,6 +47,11 @@ def _parse_chat_response(response_body: str) -> str:
     first_choice = choices[0]
     if not isinstance(first_choice, dict):
         raise FireworksClientError("Fireworks choice did not match chat format.")
+    if first_choice.get("finish_reason") == "length":
+        print(
+            f"minima warning finish_reason=length category={category} model={model}",
+            file=sys.stderr,
+        )
 
     message = first_choice.get("message")
     if not isinstance(message, dict):
@@ -56,19 +62,6 @@ def _parse_chat_response(response_body: str) -> str:
         raise FireworksClientError("Fireworks returned an empty answer.")
 
     return answer.strip()
-
-
-def _max_tokens_for_category(category: str) -> int:
-    return {
-        "factual": 1024,
-        "math": 1024,
-        "sentiment": 512,
-        "summarization": 1024,
-        "ner": 1024,
-        "logic": 1024,
-        "code_debugging": 1536,
-        "code_generation": 1536,
-    }.get(category, 1024)
 
 
 def _rejects_reasoning_effort(detail: str) -> bool:
@@ -82,13 +75,7 @@ def _rejects_reasoning_effort(detail: str) -> bool:
 class FireworksClient:
     config: Config
 
-    def answer(
-        self,
-        prompt: str,
-        category: str,
-        model: str | None = None,
-        retry_instruction: str | None = None,
-    ) -> str:
+    def answer(self, prompt: str, category: str, model: str | None = None) -> str:
         if self.config.placeholder_mode:
             return (
                 "[LOCAL TEST PLACEHOLDER - Fireworks env vars not set] "
@@ -102,33 +89,24 @@ class FireworksClient:
             prompt=prompt,
             category=category,
             model=model,
-            retry_instruction=retry_instruction,
             include_reasoning_effort=model not in _REASONING_EFFORT_UNSUPPORTED_MODELS,
         )
-        return _parse_chat_response(response_body)
+        return _parse_chat_response(response_body, category=category, model=model)
 
     def _post_chat_completion(
         self,
         prompt: str,
         category: str,
         model: str,
-        retry_instruction: str | None,
         include_reasoning_effort: bool,
     ) -> str:
         payload = {
             "model": model,
             "messages": [
-                {
-                    "role": "user",
-                    "content": build_user_prompt(
-                        category,
-                        prompt,
-                        retry_instruction=retry_instruction,
-                    ),
-                },
+                {"role": "user", "content": build_user_prompt(category, prompt)},
             ],
-            "temperature": 0.1,
-            "max_tokens": _max_tokens_for_category(category),
+            "temperature": 0.0,
+            "max_tokens": max_tokens_for_category(category),
         }
         if include_reasoning_effort:
             payload["reasoning_effort"] = "none"
@@ -158,7 +136,6 @@ class FireworksClient:
                     prompt=prompt,
                     category=category,
                     model=model,
-                    retry_instruction=retry_instruction,
                     include_reasoning_effort=False,
                 )
             raise FireworksClientError(f"Fireworks HTTP {exc.code}: {detail}") from exc
