@@ -5,39 +5,39 @@ from __future__ import annotations
 
 CATEGORY_CONFIG = {
     "sentiment": {
-        "suffix": "Return only one label: positive, negative, neutral, or mixed. Use mixed when both positive and negative sentiment are substantial.",
+        "suffix": "Pick exactly one sentiment label: positive, negative, neutral, or mixed. Use mixed when both positive and negative sentiment are substantial. Then give one brief justification.",
         "max_tokens": 120,
     },
     "ner": {
-        "suffix": "List entities only as TYPE: value, one per line. TYPES: PERSON, ORG, LOCATION, DATE. No prose.",
+        "suffix": 'List each entity as "text - TYPE" where TYPE is PERSON, ORG, LOCATION, or DATE. One entity per line. No extra text.',
         "max_tokens": 260,
     },
     "summarization": {
-        "suffix": "Follow any requested length, count, and format exactly. Otherwise give a concise summary only.",
+        "suffix": "Follow the requested summary length and format exactly.",
         "max_tokens": 220,
     },
     "factual": {
-        "suffix": "Give the shortest correct answer. No explanation unless requested.",
+        "suffix": "Answer accurately and concisely in at most three sentences.",
         "max_tokens": 300,
     },
     "math": {
-        "suffix": "Give the final answer only unless steps are requested.",
+        "suffix": 'Show minimal working, then end with "Answer: <result>".',
         "max_tokens": 400,
     },
     "logic": {
-        "suffix": "Give the final answer only unless explanation is requested.",
+        "suffix": "Reason briefly, check the constraints, then clearly state the final answer.",
         "max_tokens": 420,
     },
     "code_debugging": {
-        "suffix": "Return corrected code or the minimal fix only. Explain only if requested.",
+        "suffix": "State the bug in one sentence, then provide only the corrected code that fulfills the stated purpose.",
         "max_tokens": 520,
     },
     "code_generation": {
-        "suffix": "Return code only unless explanation is requested.",
+        "suffix": "Return only the code, with a brief docstring if appropriate. No explanation after the code.",
         "max_tokens": 520,
     },
     "unknown": {
-        "suffix": "Give a concise direct answer and preserve any requested format.",
+        "suffix": "Answer accurately and preserve any requested format.",
         "max_tokens": 300,
     },
 }
