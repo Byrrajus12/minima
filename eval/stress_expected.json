@@ -1,0 +1,2260 @@
+[
+  {
+    "task_id": "stress_factual_001",
+    "category": "factual",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Santiago"
+      ]
+    },
+    "notes": "single common-knowledge fact"
+  },
+  {
+    "task_id": "stress_factual_002",
+    "category": "factual",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "photosynthesis"
+      ]
+    },
+    "notes": "definition"
+  },
+  {
+    "task_id": "stress_factual_003",
+    "category": "factual",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Cairo",
+        "Nile"
+      ]
+    },
+    "notes": "two required details"
+  },
+  {
+    "task_id": "stress_factual_004",
+    "category": "factual",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "distance"
+      ]
+    },
+    "notes": "how a familiar device works"
+  },
+  {
+    "task_id": "stress_factual_005",
+    "category": "factual",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Gulf of Mexico"
+      ]
+    },
+    "notes": "geography body of water"
+  },
+  {
+    "task_id": "stress_factual_006",
+    "category": "factual",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "carbon dioxide"
+      ]
+    },
+    "notes": "basic biology"
+  },
+  {
+    "task_id": "stress_factual_007",
+    "category": "factual",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Tokyo",
+        "Honshu"
+      ]
+    },
+    "notes": "two-detail geography"
+  },
+  {
+    "task_id": "stress_factual_008",
+    "category": "factual",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "temperature"
+      ]
+    },
+    "notes": "definition"
+  },
+  {
+    "task_id": "stress_factual_009",
+    "category": "factual",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Jupiter"
+      ]
+    },
+    "notes": "planet fact"
+  },
+  {
+    "task_id": "stress_factual_010",
+    "category": "factual",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "gravity"
+      ]
+    },
+    "notes": "physics definition"
+  },
+  {
+    "task_id": "stress_factual_011",
+    "category": "factual",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Rome",
+        "Vatican"
+      ]
+    },
+    "notes": "two related facts"
+  },
+  {
+    "task_id": "stress_factual_012",
+    "category": "factual",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "nectar"
+      ]
+    },
+    "notes": "natural process"
+  },
+  {
+    "task_id": "stress_factual_013",
+    "category": "factual",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Pacific"
+      ]
+    },
+    "notes": "geography"
+  },
+  {
+    "task_id": "stress_factual_014",
+    "category": "factual",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "liquid",
+        "gas"
+      ]
+    },
+    "notes": "concise explanation"
+  },
+  {
+    "task_id": "stress_factual_015",
+    "category": "factual",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Shakespeare"
+      ]
+    },
+    "notes": "literary fact"
+  },
+  {
+    "task_id": "stress_factual_016",
+    "category": "factual",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "heart"
+      ]
+    },
+    "notes": "body system"
+  },
+  {
+    "task_id": "stress_factual_017",
+    "category": "factual",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Nairobi",
+        "Kenya"
+      ]
+    },
+    "notes": "two details"
+  },
+  {
+    "task_id": "stress_factual_018",
+    "category": "factual",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "magnetic",
+        "north"
+      ]
+    },
+    "notes": "how things work"
+  },
+  {
+    "task_id": "stress_factual_019",
+    "category": "factual",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "0"
+      ]
+    },
+    "notes": "numeric factual answer"
+  },
+  {
+    "task_id": "stress_factual_020",
+    "category": "factual",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Australia"
+      ]
+    },
+    "notes": "common knowledge"
+  },
+  {
+    "task_id": "stress_math_001",
+    "category": "math",
+    "difficulty": "easy",
+    "check": {
+      "type": "numeric_exact",
+      "value": 36,
+      "tolerance": 0.01
+    },
+    "notes": "arithmetic"
+  },
+  {
+    "task_id": "stress_math_002",
+    "category": "math",
+    "difficulty": "medium",
+    "check": {
+      "type": "numeric_exact",
+      "value": 105,
+      "tolerance": 0.01
+    },
+    "notes": "inventory remaining"
+  },
+  {
+    "task_id": "stress_math_003",
+    "category": "math",
+    "difficulty": "hard",
+    "check": {
+      "type": "numeric_exact",
+      "value": 40,
+      "tolerance": 0.01
+    },
+    "notes": "percentage discount"
+  },
+  {
+    "task_id": "stress_math_004",
+    "category": "math",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "numeric_exact",
+      "value": 83.75,
+      "tolerance": 0.01
+    },
+    "notes": "weighted average"
+  },
+  {
+    "task_id": "stress_math_005",
+    "category": "math",
+    "difficulty": "easy",
+    "check": {
+      "type": "numeric_exact",
+      "value": 605,
+      "tolerance": 0.01
+    },
+    "notes": "projection"
+  },
+  {
+    "task_id": "stress_math_006",
+    "category": "math",
+    "difficulty": "medium",
+    "check": {
+      "type": "numeric_exact",
+      "value": 2,
+      "tolerance": 0.01
+    },
+    "notes": "rate problem"
+  },
+  {
+    "task_id": "stress_math_007",
+    "category": "math",
+    "difficulty": "hard",
+    "check": {
+      "type": "numeric_exact",
+      "value": 15,
+      "tolerance": 0.01
+    },
+    "notes": "multi-item cost"
+  },
+  {
+    "task_id": "stress_math_008",
+    "category": "math",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "numeric_exact",
+      "value": 5,
+      "tolerance": 0.01
+    },
+    "notes": "proportion"
+  },
+  {
+    "task_id": "stress_math_009",
+    "category": "math",
+    "difficulty": "easy",
+    "check": {
+      "type": "numeric_exact",
+      "value": 43,
+      "tolerance": 0.01
+    },
+    "notes": "arithmetic order"
+  },
+  {
+    "task_id": "stress_math_010",
+    "category": "math",
+    "difficulty": "medium",
+    "check": {
+      "type": "numeric_exact",
+      "value": 40,
+      "tolerance": 0.01
+    },
+    "notes": "percentage"
+  },
+  {
+    "task_id": "stress_math_011",
+    "category": "math",
+    "difficulty": "hard",
+    "check": {
+      "type": "numeric_exact",
+      "value": 5,
+      "tolerance": 0.01
+    },
+    "notes": "rate"
+  },
+  {
+    "task_id": "stress_math_012",
+    "category": "math",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "numeric_exact",
+      "value": 46,
+      "tolerance": 0.01
+    },
+    "notes": "inventory with loss"
+  },
+  {
+    "task_id": "stress_math_013",
+    "category": "math",
+    "difficulty": "easy",
+    "check": {
+      "type": "numeric_exact",
+      "value": 210,
+      "tolerance": 0.01
+    },
+    "notes": "interest"
+  },
+  {
+    "task_id": "stress_math_014",
+    "category": "math",
+    "difficulty": "medium",
+    "check": {
+      "type": "numeric_exact",
+      "value": 21,
+      "tolerance": 0.01
+    },
+    "notes": "solve for variable"
+  },
+  {
+    "task_id": "stress_math_015",
+    "category": "math",
+    "difficulty": "hard",
+    "check": {
+      "type": "numeric_exact",
+      "value": 3,
+      "tolerance": 0.01
+    },
+    "notes": "time rate distance"
+  },
+  {
+    "task_id": "stress_math_016",
+    "category": "math",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "numeric_exact",
+      "value": 100,
+      "tolerance": 0.01
+    },
+    "notes": "reverse percentage"
+  },
+  {
+    "task_id": "stress_math_017",
+    "category": "math",
+    "difficulty": "easy",
+    "check": {
+      "type": "numeric_exact",
+      "value": 75,
+      "tolerance": 0.01
+    },
+    "notes": "percentage of quantity"
+  },
+  {
+    "task_id": "stress_math_018",
+    "category": "math",
+    "difficulty": "medium",
+    "check": {
+      "type": "numeric_exact",
+      "value": 0.7,
+      "tolerance": 0.01
+    },
+    "notes": "fraction rate"
+  },
+  {
+    "task_id": "stress_math_019",
+    "category": "math",
+    "difficulty": "hard",
+    "check": {
+      "type": "numeric_exact",
+      "value": 43,
+      "tolerance": 0.01
+    },
+    "notes": "multi-step count"
+  },
+  {
+    "task_id": "stress_math_020",
+    "category": "math",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "numeric_exact",
+      "value": 25,
+      "tolerance": 0.01
+    },
+    "notes": "percent increase"
+  },
+  {
+    "task_id": "stress_sentiment_001",
+    "category": "sentiment",
+    "difficulty": "easy",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "positive",
+      "require_reason": false
+    },
+    "notes": "clear positive"
+  },
+  {
+    "task_id": "stress_sentiment_002",
+    "category": "sentiment",
+    "difficulty": "medium",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "negative",
+      "require_reason": false
+    },
+    "notes": "clear negative"
+  },
+  {
+    "task_id": "stress_sentiment_003",
+    "category": "sentiment",
+    "difficulty": "hard",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "neutral",
+      "require_reason": false
+    },
+    "notes": "neutral statement"
+  },
+  {
+    "task_id": "stress_sentiment_004",
+    "category": "sentiment",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "mixed",
+      "require_reason": false
+    },
+    "notes": "substantial positive and negative"
+  },
+  {
+    "task_id": "stress_sentiment_005",
+    "category": "sentiment",
+    "difficulty": "easy",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "mixed",
+      "require_reason": true
+    },
+    "notes": "mixed with justification requested"
+  },
+  {
+    "task_id": "stress_sentiment_006",
+    "category": "sentiment",
+    "difficulty": "medium",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "positive",
+      "require_reason": false
+    },
+    "notes": "positive short review"
+  },
+  {
+    "task_id": "stress_sentiment_007",
+    "category": "sentiment",
+    "difficulty": "hard",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "negative",
+      "require_reason": false
+    },
+    "notes": "negative multiple issues"
+  },
+  {
+    "task_id": "stress_sentiment_008",
+    "category": "sentiment",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "neutral",
+      "require_reason": false
+    },
+    "notes": "neutral schedule"
+  },
+  {
+    "task_id": "stress_sentiment_009",
+    "category": "sentiment",
+    "difficulty": "easy",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "mixed",
+      "require_reason": false
+    },
+    "notes": "compact mixed"
+  },
+  {
+    "task_id": "stress_sentiment_010",
+    "category": "sentiment",
+    "difficulty": "medium",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "mixed",
+      "require_reason": true
+    },
+    "notes": "mixed with explicit reason"
+  },
+  {
+    "task_id": "stress_sentiment_011",
+    "category": "sentiment",
+    "difficulty": "hard",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "positive",
+      "require_reason": false
+    },
+    "notes": "product improvement"
+  },
+  {
+    "task_id": "stress_sentiment_012",
+    "category": "sentiment",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "neutral",
+      "require_reason": false
+    },
+    "notes": "descriptive neutral"
+  },
+  {
+    "task_id": "stress_sentiment_013",
+    "category": "sentiment",
+    "difficulty": "easy",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "negative",
+      "require_reason": false
+    },
+    "notes": "negative usability"
+  },
+  {
+    "task_id": "stress_sentiment_014",
+    "category": "sentiment",
+    "difficulty": "medium",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "mixed",
+      "require_reason": false
+    },
+    "notes": "mixed event review"
+  },
+  {
+    "task_id": "stress_sentiment_015",
+    "category": "sentiment",
+    "difficulty": "hard",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "mixed",
+      "require_reason": true
+    },
+    "notes": "mixed software review"
+  },
+  {
+    "task_id": "stress_sentiment_016",
+    "category": "sentiment",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "positive",
+      "require_reason": false
+    },
+    "notes": "positive product"
+  },
+  {
+    "task_id": "stress_sentiment_017",
+    "category": "sentiment",
+    "difficulty": "easy",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "neutral",
+      "require_reason": false
+    },
+    "notes": "neutral policy"
+  },
+  {
+    "task_id": "stress_sentiment_018",
+    "category": "sentiment",
+    "difficulty": "medium",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "negative",
+      "require_reason": false
+    },
+    "notes": "negative dining"
+  },
+  {
+    "task_id": "stress_sentiment_019",
+    "category": "sentiment",
+    "difficulty": "hard",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "mixed",
+      "require_reason": false
+    },
+    "notes": "mixed documentation"
+  },
+  {
+    "task_id": "stress_sentiment_020",
+    "category": "sentiment",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "label_with_optional_reason",
+      "label": "mixed",
+      "require_reason": true
+    },
+    "notes": "short mixed with justification"
+  },
+  {
+    "task_id": "stress_summarization_001",
+    "category": "summarization",
+    "difficulty": "easy",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "bridge",
+        "bus",
+        "inspections"
+      ],
+      "sentence_count": 1,
+      "max_words": 35
+    },
+    "notes": "one sentence plus facts"
+  },
+  {
+    "task_id": "stress_summarization_002",
+    "category": "summarization",
+    "difficulty": "medium",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "museum",
+        "textile",
+        "student"
+      ],
+      "bullet_count": 2,
+      "max_words": 60
+    },
+    "notes": "two bullets"
+  },
+  {
+    "task_id": "stress_summarization_003",
+    "category": "summarization",
+    "difficulty": "hard",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "bakery",
+        "ovens",
+        "costs"
+      ],
+      "max_words": 18
+    },
+    "notes": "word cap"
+  },
+  {
+    "task_id": "stress_summarization_004",
+    "category": "summarization",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "clinic",
+        "400",
+        "nurses"
+      ],
+      "max_words": 35
+    },
+    "notes": "preserve numbers"
+  },
+  {
+    "task_id": "stress_summarization_005",
+    "category": "summarization",
+    "difficulty": "easy",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "garden",
+        "parents",
+        "students"
+      ],
+      "sentence_count": 1,
+      "max_words": 35
+    },
+    "notes": "community details"
+  },
+  {
+    "task_id": "stress_summarization_006",
+    "category": "summarization",
+    "difficulty": "medium",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "airport",
+        "security",
+        "signs"
+      ],
+      "bullet_count": 2,
+      "max_words": 55
+    },
+    "notes": "format"
+  },
+  {
+    "task_id": "stress_summarization_007",
+    "category": "summarization",
+    "difficulty": "hard",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "launch",
+        "payment",
+        "recovery"
+      ],
+      "max_words": 20
+    },
+    "notes": "compact product summary"
+  },
+  {
+    "task_id": "stress_summarization_008",
+    "category": "summarization",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "corn",
+        "yields",
+        "villages"
+      ],
+      "sentence_count": 1,
+      "max_words": 35
+    },
+    "notes": "agriculture facts"
+  },
+  {
+    "task_id": "stress_summarization_009",
+    "category": "summarization",
+    "difficulty": "easy",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "bike",
+        "Pine",
+        "parking"
+      ],
+      "max_words": 35
+    },
+    "notes": "avoid hallucination"
+  },
+  {
+    "task_id": "stress_summarization_010",
+    "category": "summarization",
+    "difficulty": "medium",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "offline",
+        "downloads",
+        "route"
+      ],
+      "bullet_count": 2,
+      "max_words": 55
+    },
+    "notes": "two bullets product"
+  },
+  {
+    "task_id": "stress_summarization_011",
+    "category": "summarization",
+    "difficulty": "hard",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "storm",
+        "power",
+        "market"
+      ],
+      "sentence_count": 1,
+      "max_words": 35
+    },
+    "notes": "contrast"
+  },
+  {
+    "task_id": "stress_summarization_012",
+    "category": "summarization",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "tuition",
+        "grants",
+        "pantry"
+      ],
+      "max_words": 25
+    },
+    "notes": "three facts"
+  },
+  {
+    "task_id": "stress_summarization_013",
+    "category": "summarization",
+    "difficulty": "easy",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "theater",
+        "performances",
+        "flood"
+      ],
+      "sentence_count": 1,
+      "max_words": 35
+    },
+    "notes": "event summary"
+  },
+  {
+    "task_id": "stress_summarization_014",
+    "category": "summarization",
+    "difficulty": "medium",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "zoo",
+        "guides",
+        "visitor"
+      ],
+      "bullet_count": 2,
+      "max_words": 55
+    },
+    "notes": "two bullets"
+  },
+  {
+    "task_id": "stress_summarization_015",
+    "category": "summarization",
+    "difficulty": "hard",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "charger",
+        "overheating",
+        "August"
+      ],
+      "max_words": 35
+    },
+    "notes": "recall details"
+  },
+  {
+    "task_id": "stress_summarization_016",
+    "category": "summarization",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "library",
+        "archives",
+        "photos"
+      ],
+      "sentence_count": 1,
+      "max_words": 35
+    },
+    "notes": "archive facts"
+  },
+  {
+    "task_id": "stress_summarization_017",
+    "category": "summarization",
+    "difficulty": "easy",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "cafe",
+        "reusable",
+        "discounts"
+      ],
+      "max_words": 20
+    },
+    "notes": "environmental action"
+  },
+  {
+    "task_id": "stress_summarization_018",
+    "category": "summarization",
+    "difficulty": "medium",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "hospital",
+        "pediatric",
+        "referral"
+      ],
+      "bullet_count": 2,
+      "max_words": 55
+    },
+    "notes": "healthcare"
+  },
+  {
+    "task_id": "stress_summarization_019",
+    "category": "summarization",
+    "difficulty": "hard",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "budget",
+        "travel",
+        "revenue"
+      ],
+      "sentence_count": 1,
+      "max_words": 35
+    },
+    "notes": "cause"
+  },
+  {
+    "task_id": "stress_summarization_020",
+    "category": "summarization",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "summary_constraints",
+      "keywords": [
+        "brakes",
+        "residents",
+        "October"
+      ],
+      "max_words": 35
+    },
+    "notes": "transport facts"
+  },
+  {
+    "task_id": "stress_ner_001",
+    "category": "ner",
+    "difficulty": "easy",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Maya Chen",
+          "type": "PERSON"
+        },
+        {
+          "text": "Orion Foods",
+          "type": "ORG"
+        },
+        {
+          "text": "Nairobi",
+          "type": "LOCATION"
+        },
+        {
+          "text": "April 3",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_002",
+    "category": "ner",
+    "difficulty": "medium",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Carlos Rivera",
+          "type": "PERSON"
+        },
+        {
+          "text": "Northstar Bank",
+          "type": "ORG"
+        },
+        {
+          "text": "Madrid",
+          "type": "LOCATION"
+        },
+        {
+          "text": "June 18",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_003",
+    "category": "ner",
+    "difficulty": "hard",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Asha Patel",
+          "type": "PERSON"
+        },
+        {
+          "text": "GreenGrid Energy",
+          "type": "ORG"
+        },
+        {
+          "text": "Vancouver",
+          "type": "LOCATION"
+        },
+        {
+          "text": "September 5",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_004",
+    "category": "ner",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Lena Ortiz",
+          "type": "PERSON"
+        },
+        {
+          "text": "Harbor Analytics",
+          "type": "ORG"
+        },
+        {
+          "text": "Boston",
+          "type": "LOCATION"
+        },
+        {
+          "text": "July 10, 2026",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_005",
+    "category": "ner",
+    "difficulty": "easy",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Daniel Wu",
+          "type": "PERSON"
+        },
+        {
+          "text": "Quantum Forge",
+          "type": "ORG"
+        },
+        {
+          "text": "Singapore",
+          "type": "LOCATION"
+        },
+        {
+          "text": "January 21",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_006",
+    "category": "ner",
+    "difficulty": "medium",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Priya Shah",
+          "type": "PERSON"
+        },
+        {
+          "text": "Atlas Robotics",
+          "type": "ORG"
+        },
+        {
+          "text": "Toronto",
+          "type": "LOCATION"
+        },
+        {
+          "text": "July 9",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_007",
+    "category": "ner",
+    "difficulty": "hard",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Elena Morris",
+          "type": "PERSON"
+        },
+        {
+          "text": "BrightWave Labs",
+          "type": "ORG"
+        },
+        {
+          "text": "Lisbon",
+          "type": "LOCATION"
+        },
+        {
+          "text": "March 12",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_008",
+    "category": "ner",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Noah Bennett",
+          "type": "PERSON"
+        },
+        {
+          "text": "Cedar Health",
+          "type": "ORG"
+        },
+        {
+          "text": "Denver",
+          "type": "LOCATION"
+        },
+        {
+          "text": "May 4",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_009",
+    "category": "ner",
+    "difficulty": "easy",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Iris Kim",
+          "type": "PERSON"
+        },
+        {
+          "text": "Blue Harbor Studio",
+          "type": "ORG"
+        },
+        {
+          "text": "Seoul",
+          "type": "LOCATION"
+        },
+        {
+          "text": "August 14",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_010",
+    "category": "ner",
+    "difficulty": "medium",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Omar Ali",
+          "type": "PERSON"
+        },
+        {
+          "text": "Summit Rail",
+          "type": "ORG"
+        },
+        {
+          "text": "Cairo",
+          "type": "LOCATION"
+        },
+        {
+          "text": "February 2",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_011",
+    "category": "ner",
+    "difficulty": "hard",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Grace Lin",
+          "type": "PERSON"
+        },
+        {
+          "text": "Nova Textiles",
+          "type": "ORG"
+        },
+        {
+          "text": "Osaka",
+          "type": "LOCATION"
+        },
+        {
+          "text": "November 6",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_012",
+    "category": "ner",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Ethan Brooks",
+          "type": "PERSON"
+        },
+        {
+          "text": "Maple Trust",
+          "type": "ORG"
+        },
+        {
+          "text": "Chicago",
+          "type": "LOCATION"
+        },
+        {
+          "text": "October 19",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_013",
+    "category": "ner",
+    "difficulty": "easy",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Sofia Rossi",
+          "type": "PERSON"
+        },
+        {
+          "text": "Argo Marine",
+          "type": "ORG"
+        },
+        {
+          "text": "Athens",
+          "type": "LOCATION"
+        },
+        {
+          "text": "December 8",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_014",
+    "category": "ner",
+    "difficulty": "medium",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Mateo Cruz",
+          "type": "PERSON"
+        },
+        {
+          "text": "Silverline Media",
+          "type": "ORG"
+        },
+        {
+          "text": "Bogota",
+          "type": "LOCATION"
+        },
+        {
+          "text": "March 30",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_015",
+    "category": "ner",
+    "difficulty": "hard",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Hannah Park",
+          "type": "PERSON"
+        },
+        {
+          "text": "Zenith Solar",
+          "type": "ORG"
+        },
+        {
+          "text": "Phoenix",
+          "type": "LOCATION"
+        },
+        {
+          "text": "June 1",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_016",
+    "category": "ner",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Nina Kapoor",
+          "type": "PERSON"
+        },
+        {
+          "text": "Riverstone Analytics",
+          "type": "ORG"
+        },
+        {
+          "text": "Dublin",
+          "type": "LOCATION"
+        },
+        {
+          "text": "April 22",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_017",
+    "category": "ner",
+    "difficulty": "easy",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Theo Martin",
+          "type": "PERSON"
+        },
+        {
+          "text": "Pioneer Foods",
+          "type": "ORG"
+        },
+        {
+          "text": "Paris",
+          "type": "LOCATION"
+        },
+        {
+          "text": "January 5",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_018",
+    "category": "ner",
+    "difficulty": "medium",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Amara Okafor",
+          "type": "PERSON"
+        },
+        {
+          "text": "Lumen Bank",
+          "type": "ORG"
+        },
+        {
+          "text": "Lagos",
+          "type": "LOCATION"
+        },
+        {
+          "text": "May 17",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_019",
+    "category": "ner",
+    "difficulty": "hard",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Jonas Meyer",
+          "type": "PERSON"
+        },
+        {
+          "text": "Northwind Games",
+          "type": "ORG"
+        },
+        {
+          "text": "Berlin",
+          "type": "LOCATION"
+        },
+        {
+          "text": "September 28",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_ner_020",
+    "category": "ner",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "entity_set",
+      "entities": [
+        {
+          "text": "Mei Tan",
+          "type": "PERSON"
+        },
+        {
+          "text": "Evergreen Transit",
+          "type": "ORG"
+        },
+        {
+          "text": "Melbourne",
+          "type": "LOCATION"
+        },
+        {
+          "text": "July 24",
+          "type": "DATE"
+        }
+      ]
+    },
+    "notes": "person/org/location/date extraction"
+  },
+  {
+    "task_id": "stress_code_debugging_001",
+    "category": "code_debugging",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "def max_value",
+        "return best"
+      ]
+    },
+    "notes": "early return in max loop"
+  },
+  {
+    "task_id": "stress_code_debugging_002",
+    "category": "code_debugging",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "range",
+        "-1"
+      ]
+    },
+    "notes": "range end"
+  },
+  {
+    "task_id": "stress_code_debugging_003",
+    "category": "code_debugging",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "None",
+        "tags"
+      ]
+    },
+    "notes": "mutable default"
+  },
+  {
+    "task_id": "stress_code_debugging_004",
+    "category": "code_debugging",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "lambda",
+        "i=i"
+      ]
+    },
+    "notes": "late binding closure"
+  },
+  {
+    "task_id": "stress_code_debugging_005",
+    "category": "code_debugging",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "list",
+        "sum"
+      ]
+    },
+    "notes": "generator exhausted"
+  },
+  {
+    "task_id": "stress_code_debugging_006",
+    "category": "code_debugging",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "key=len",
+        "sort"
+      ]
+    },
+    "notes": "wrong sort key"
+  },
+  {
+    "task_id": "stress_code_debugging_007",
+    "category": "code_debugging",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "if not nums",
+        "0"
+      ]
+    },
+    "notes": "empty input"
+  },
+  {
+    "task_id": "stress_code_debugging_008",
+    "category": "code_debugging",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "== 0",
+        "return"
+      ]
+    },
+    "notes": "truthy remainder bug"
+  },
+  {
+    "task_id": "stress_code_debugging_009",
+    "category": "code_debugging",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "return",
+        "words"
+      ]
+    },
+    "notes": "missing return"
+  },
+  {
+    "task_id": "stress_code_debugging_010",
+    "category": "code_debugging",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "+=",
+        "total"
+      ]
+    },
+    "notes": "overwriting accumulator"
+  },
+  {
+    "task_id": "stress_code_debugging_011",
+    "category": "code_debugging",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "if",
+        "None"
+      ]
+    },
+    "notes": "empty edge case"
+  },
+  {
+    "task_id": "stress_code_debugging_012",
+    "category": "code_debugging",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "return 10",
+        "x > 10"
+      ]
+    },
+    "notes": "upper bound"
+  },
+  {
+    "task_id": "stress_code_debugging_013",
+    "category": "code_debugging",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "get",
+        "+ 1"
+      ]
+    },
+    "notes": "count increment"
+  },
+  {
+    "task_id": "stress_code_debugging_014",
+    "category": "code_debugging",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "reversed",
+        "return n"
+      ]
+    },
+    "notes": "first vs last"
+  },
+  {
+    "task_id": "stress_code_debugging_015",
+    "category": "code_debugging",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "return",
+        "strip",
+        "lower"
+      ]
+    },
+    "notes": "missing return chaining"
+  },
+  {
+    "task_id": "stress_code_debugging_016",
+    "category": "code_debugging",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "copy",
+        "list"
+      ]
+    },
+    "notes": "aliasing"
+  },
+  {
+    "task_id": "stress_code_debugging_017",
+    "category": "code_debugging",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "in text",
+        "return"
+      ]
+    },
+    "notes": "find integer vs boolean"
+  },
+  {
+    "task_id": "stress_code_debugging_018",
+    "category": "code_debugging",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "range(len(items))"
+      ]
+    },
+    "notes": "off-by-one index"
+  },
+  {
+    "task_id": "stress_code_debugging_019",
+    "category": "code_debugging",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "extend",
+        "return"
+      ]
+    },
+    "notes": "append nested list"
+  },
+  {
+    "task_id": "stress_code_debugging_020",
+    "category": "code_debugging",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "> 0",
+        "return"
+      ]
+    },
+    "notes": "boundary condition"
+  },
+  {
+    "task_id": "stress_logic_001",
+    "category": "logic",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Cara"
+      ]
+    },
+    "notes": "ordering"
+  },
+  {
+    "task_id": "stress_logic_002",
+    "category": "logic",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "yes"
+      ]
+    },
+    "notes": "syllogism"
+  },
+  {
+    "task_id": "stress_logic_003",
+    "category": "logic",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "blue"
+      ]
+    },
+    "notes": "linear order"
+  },
+  {
+    "task_id": "stress_logic_004",
+    "category": "logic",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Omar"
+      ]
+    },
+    "notes": "truth lie"
+  },
+  {
+    "task_id": "stress_logic_005",
+    "category": "logic",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "no"
+      ]
+    },
+    "notes": "negative syllogism"
+  },
+  {
+    "task_id": "stress_logic_006",
+    "category": "logic",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Bo"
+      ]
+    },
+    "notes": "seating order"
+  },
+  {
+    "task_id": "stress_logic_007",
+    "category": "logic",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "red"
+      ]
+    },
+    "notes": "ownership"
+  },
+  {
+    "task_id": "stress_logic_008",
+    "category": "logic",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "yes"
+      ]
+    },
+    "notes": "deduction"
+  },
+  {
+    "task_id": "stress_logic_009",
+    "category": "logic",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "2"
+      ]
+    },
+    "notes": "elimination"
+  },
+  {
+    "task_id": "stress_logic_010",
+    "category": "logic",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "no"
+      ]
+    },
+    "notes": "liar"
+  },
+  {
+    "task_id": "stress_logic_011",
+    "category": "logic",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Eli"
+      ]
+    },
+    "notes": "rank"
+  },
+  {
+    "task_id": "stress_logic_012",
+    "category": "logic",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "no"
+      ]
+    },
+    "notes": "invalid converse"
+  },
+  {
+    "task_id": "stress_logic_013",
+    "category": "logic",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "circle"
+      ]
+    },
+    "notes": "vertical order"
+  },
+  {
+    "task_id": "stress_logic_014",
+    "category": "logic",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "C"
+      ]
+    },
+    "notes": "exclusion"
+  },
+  {
+    "task_id": "stress_logic_015",
+    "category": "logic",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "yes"
+      ]
+    },
+    "notes": "simple rule"
+  },
+  {
+    "task_id": "stress_logic_016",
+    "category": "logic",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Kai"
+      ]
+    },
+    "notes": "seating"
+  },
+  {
+    "task_id": "stress_logic_017",
+    "category": "logic",
+    "difficulty": "easy",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "turtle"
+      ]
+    },
+    "notes": "ownership"
+  },
+  {
+    "task_id": "stress_logic_018",
+    "category": "logic",
+    "difficulty": "medium",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "no"
+      ]
+    },
+    "notes": "age rule"
+  },
+  {
+    "task_id": "stress_logic_019",
+    "category": "logic",
+    "difficulty": "hard",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "yellow"
+      ]
+    },
+    "notes": "two options"
+  },
+  {
+    "task_id": "stress_logic_020",
+    "category": "logic",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "contains_all",
+      "values": [
+        "Max"
+      ]
+    },
+    "notes": "truth teller"
+  },
+  {
+    "task_id": "stress_code_generation_001",
+    "category": "code_generation",
+    "difficulty": "easy",
+    "check": {
+      "type": "python_exec",
+      "function": "second_largest",
+      "tests": "assert second_largest([3, 1, 3, 2]) == 2\nassert second_largest([5]) is None\nassert second_largest([-1, -3, -2]) == -2"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_002",
+    "category": "code_generation",
+    "difficulty": "medium",
+    "check": {
+      "type": "python_exec",
+      "function": "unique_ordered",
+      "tests": "assert unique_ordered([1,2,1,3,2]) == [1,2,3]\nassert unique_ordered([]) == []"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_003",
+    "category": "code_generation",
+    "difficulty": "hard",
+    "check": {
+      "type": "python_exec",
+      "function": "count_words",
+      "tests": "assert count_words(['a','b','a']) == {'a':2,'b':1}\nassert count_words([]) == {}"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_004",
+    "category": "code_generation",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "python_exec",
+      "function": "parse_pairs",
+      "tests": "assert parse_pairs('a=1;b=2') == {'a':'1','b':'2'}\nassert parse_pairs('') == {}"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_005",
+    "category": "code_generation",
+    "difficulty": "easy",
+    "check": {
+      "type": "python_exec",
+      "function": "first_or_default",
+      "tests": "assert first_or_default([4,5]) == 4\nassert first_or_default([], 'x') == 'x'"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_006",
+    "category": "code_generation",
+    "difficulty": "medium",
+    "check": {
+      "type": "python_exec",
+      "function": "flatten_once",
+      "tests": "assert flatten_once([[1,2],[3],4]) == [1,2,3,4]\nassert flatten_once([]) == []"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_007",
+    "category": "code_generation",
+    "difficulty": "hard",
+    "check": {
+      "type": "python_exec",
+      "function": "safe_ratio",
+      "tests": "assert safe_ratio(6,3) == 2\nassert safe_ratio(1,0) is None"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_008",
+    "category": "code_generation",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "python_exec",
+      "function": "clamp",
+      "tests": "assert clamp(5,0,10) == 5\nassert clamp(-1,0,10) == 0\nassert clamp(12,0,10) == 10"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_009",
+    "category": "code_generation",
+    "difficulty": "easy",
+    "check": {
+      "type": "python_exec",
+      "function": "chunk_pairs",
+      "tests": "assert chunk_pairs([1,2,3,4,5]) == [(1,2),(3,4)]\nassert chunk_pairs([]) == []"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_010",
+    "category": "code_generation",
+    "difficulty": "medium",
+    "check": {
+      "type": "python_exec",
+      "function": "initials",
+      "tests": "assert initials('Ada Lovelace') == 'AL'\nassert initials('  grace  hopper ') == 'GH'"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_011",
+    "category": "code_generation",
+    "difficulty": "hard",
+    "check": {
+      "type": "python_exec",
+      "function": "moving_sum",
+      "tests": "assert moving_sum([2,3,5]) == [2,5,10]\nassert moving_sum([]) == []"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_012",
+    "category": "code_generation",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "python_exec",
+      "function": "invert_dict",
+      "tests": "assert invert_dict({'a':1,'b':1,'c':2}) == {1:['a','b'],2:['c']}"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_013",
+    "category": "code_generation",
+    "difficulty": "easy",
+    "check": {
+      "type": "python_exec",
+      "function": "is_palindrome",
+      "tests": "assert is_palindrome('Never odd or even') is True\nassert is_palindrome('hello') is False"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_014",
+    "category": "code_generation",
+    "difficulty": "medium",
+    "check": {
+      "type": "python_exec",
+      "function": "only_positive",
+      "tests": "assert only_positive([-1,0,2,3]) == [2,3]"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_015",
+    "category": "code_generation",
+    "difficulty": "hard",
+    "check": {
+      "type": "python_exec",
+      "function": "merge_counts",
+      "tests": "assert merge_counts({'x':2},{'x':3,'y':1}) == {'x':5,'y':1}"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_016",
+    "category": "code_generation",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "python_exec",
+      "function": "last_index",
+      "tests": "assert last_index([1,2,1],1) == 2\nassert last_index([1],9) == -1"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_017",
+    "category": "code_generation",
+    "difficulty": "easy",
+    "check": {
+      "type": "python_exec",
+      "function": "title_names",
+      "tests": "assert title_names([' ada ','GRACE']) == ['Ada','Grace']"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_018",
+    "category": "code_generation",
+    "difficulty": "medium",
+    "check": {
+      "type": "python_exec",
+      "function": "has_duplicates",
+      "tests": "assert has_duplicates([1,2,1]) is True\nassert has_duplicates([1,2,3]) is False"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_019",
+    "category": "code_generation",
+    "difficulty": "hard",
+    "check": {
+      "type": "python_exec",
+      "function": "median_of_three",
+      "tests": "assert median_of_three(3,1,2) == 2\nassert median_of_three(9,9,1) == 9"
+    },
+    "notes": "executable edge-case function test"
+  },
+  {
+    "task_id": "stress_code_generation_020",
+    "category": "code_generation",
+    "difficulty": "adversarial",
+    "check": {
+      "type": "python_exec",
+      "function": "compact_none",
+      "tests": "assert compact_none([None,0,'',2]) == [0,'',2]"
+    },
+    "notes": "executable edge-case function test"
+  }
+]

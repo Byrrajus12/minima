@@ -1,0 +1,642 @@
+[
+  {
+    "task_id": "stress_factual_001",
+    "prompt": "What is the capital of Chile?"
+  },
+  {
+    "task_id": "stress_factual_002",
+    "prompt": "What natural process lets plants turn light, water, and carbon dioxide into sugar?"
+  },
+  {
+    "task_id": "stress_factual_003",
+    "prompt": "Name the capital of Egypt and the river that runs through it."
+  },
+  {
+    "task_id": "stress_factual_004",
+    "prompt": "In simple terms, what does an odometer measure in a car?"
+  },
+  {
+    "task_id": "stress_factual_005",
+    "prompt": "What body of water lies between Florida and Mexico?"
+  },
+  {
+    "task_id": "stress_factual_006",
+    "prompt": "What gas do humans mainly exhale after cells use oxygen?"
+  },
+  {
+    "task_id": "stress_factual_007",
+    "prompt": "Which city is the capital of Japan, and which island is it on?"
+  },
+  {
+    "task_id": "stress_factual_008",
+    "prompt": "What does a thermometer measure?"
+  },
+  {
+    "task_id": "stress_factual_009",
+    "prompt": "Which planet has the Great Red Spot?"
+  },
+  {
+    "task_id": "stress_factual_010",
+    "prompt": "What force pulls objects toward Earth?"
+  },
+  {
+    "task_id": "stress_factual_011",
+    "prompt": "Name the capital of Italy and the country completely surrounded by that city."
+  },
+  {
+    "task_id": "stress_factual_012",
+    "prompt": "What do bees collect from flowers to make honey?"
+  },
+  {
+    "task_id": "stress_factual_013",
+    "prompt": "Which ocean borders California?"
+  },
+  {
+    "task_id": "stress_factual_014",
+    "prompt": "What is evaporation?"
+  },
+  {
+    "task_id": "stress_factual_015",
+    "prompt": "Who wrote the play Hamlet?"
+  },
+  {
+    "task_id": "stress_factual_016",
+    "prompt": "What organ pumps blood through the human body?"
+  },
+  {
+    "task_id": "stress_factual_017",
+    "prompt": "Name the capital of Kenya and the country it belongs to."
+  },
+  {
+    "task_id": "stress_factual_018",
+    "prompt": "How does a compass help with navigation?"
+  },
+  {
+    "task_id": "stress_factual_019",
+    "prompt": "What is the freezing point of water in Celsius?"
+  },
+  {
+    "task_id": "stress_factual_020",
+    "prompt": "Which country is both a continent and an island nation?"
+  },
+  {
+    "task_id": "stress_math_001",
+    "prompt": "Calculate: 18 + 27 - 9."
+  },
+  {
+    "task_id": "stress_math_002",
+    "prompt": "A store had 120 pens, sold 45, then received 30 more. How many pens are there now?"
+  },
+  {
+    "task_id": "stress_math_003",
+    "prompt": "Calculate the sale price: a $50 item is discounted by 20%."
+  },
+  {
+    "task_id": "stress_math_004",
+    "prompt": "Compute the weighted average of 80 with weight 3 and 95 with weight 1."
+  },
+  {
+    "task_id": "stress_math_005",
+    "prompt": "Calculate the final population: 500 grows by 10% for two years."
+  },
+  {
+    "task_id": "stress_math_006",
+    "prompt": "If 4 workers make 48 parts in 6 hours, how many parts per worker per hour?"
+  },
+  {
+    "task_id": "stress_math_007",
+    "prompt": "Calculate the total cost of 3 notebooks at $4 each and 2 pens at $1.50 each."
+  },
+  {
+    "task_id": "stress_math_008",
+    "prompt": "A recipe uses 2 cups of flour for 8 muffins. How many cups are needed for 20 muffins?"
+  },
+  {
+    "task_id": "stress_math_009",
+    "prompt": "Solve: 7 * 8 - 13."
+  },
+  {
+    "task_id": "stress_math_010",
+    "prompt": "A class has 12 girls and 18 boys. What percentage are girls?"
+  },
+  {
+    "task_id": "stress_math_011",
+    "prompt": "Calculate the speed in miles per hour: a runner covers 15 miles in 3 hours."
+  },
+  {
+    "task_id": "stress_math_012",
+    "prompt": "A box has 9 rows of 6 tiles, and 8 tiles break. How many usable tiles remain?"
+  },
+  {
+    "task_id": "stress_math_013",
+    "prompt": "An account has $200 and earns 5% interest once. What is the balance?"
+  },
+  {
+    "task_id": "stress_math_014",
+    "prompt": "The average of 10, 14, and x is 15. Solve for x."
+  },
+  {
+    "task_id": "stress_math_015",
+    "prompt": "A train travels 180 miles at 60 mph. How many hours does it take?"
+  },
+  {
+    "task_id": "stress_math_016",
+    "prompt": "A jacket costs $90 after a 10% discount. What was the original price?"
+  },
+  {
+    "task_id": "stress_math_017",
+    "prompt": "Compute 30% of 250."
+  },
+  {
+    "task_id": "stress_math_018",
+    "prompt": "Calculate the fraction of games won: a team won 14 games and lost 6."
+  },
+  {
+    "task_id": "stress_math_019",
+    "prompt": "There are 5 packs with 12 batteries each. If 17 are used, how many remain?"
+  },
+  {
+    "task_id": "stress_math_020",
+    "prompt": "A price rises from 80 to 100. What is the percent increase?"
+  },
+  {
+    "task_id": "stress_sentiment_001",
+    "prompt": "Classify the sentiment: The meal was delicious and the staff were friendly."
+  },
+  {
+    "task_id": "stress_sentiment_002",
+    "prompt": "Classify the sentiment: The app crashed twice and support never replied."
+  },
+  {
+    "task_id": "stress_sentiment_003",
+    "prompt": "Classify the sentiment: The report lists quarterly revenue and operating expenses."
+  },
+  {
+    "task_id": "stress_sentiment_004",
+    "prompt": "Classify the sentiment: The headphones sound excellent, but the headband broke after two days."
+  },
+  {
+    "task_id": "stress_sentiment_005",
+    "prompt": "Classify the sentiment and briefly justify: The room was spotless and quiet, though the Wi-Fi barely worked."
+  },
+  {
+    "task_id": "stress_sentiment_006",
+    "prompt": "Classify the sentiment: I love the screen, speed, and battery life."
+  },
+  {
+    "task_id": "stress_sentiment_007",
+    "prompt": "Classify the sentiment: The delivery was late, the box was wet, and the product was scratched."
+  },
+  {
+    "task_id": "stress_sentiment_008",
+    "prompt": "Classify the sentiment: The meeting is scheduled for Monday at noon."
+  },
+  {
+    "task_id": "stress_sentiment_009",
+    "prompt": "Classify as positive, negative, neutral, or mixed: Great camera quality, awful low-light autofocus."
+  },
+  {
+    "task_id": "stress_sentiment_010",
+    "prompt": "Classify the sentiment and give one reason: The shoes look stylish and fit well, but the sole separated immediately."
+  },
+  {
+    "task_id": "stress_sentiment_011",
+    "prompt": "Classify the sentiment: The update made search faster and fixed the login issue."
+  },
+  {
+    "task_id": "stress_sentiment_012",
+    "prompt": "Classify the sentiment: The new policy is described in section four."
+  },
+  {
+    "task_id": "stress_sentiment_013",
+    "prompt": "Classify the sentiment: Every page loaded slowly and the checkout failed."
+  },
+  {
+    "task_id": "stress_sentiment_014",
+    "prompt": "Classify the sentiment: The concert started late, but the performance itself was outstanding."
+  },
+  {
+    "task_id": "stress_sentiment_015",
+    "prompt": "Classify the sentiment and justify briefly: The software is powerful, yet the onboarding is confusing."
+  },
+  {
+    "task_id": "stress_sentiment_016",
+    "prompt": "Classify the sentiment: This chair is comfortable, sturdy, and easy to assemble."
+  },
+  {
+    "task_id": "stress_sentiment_017",
+    "prompt": "Classify the sentiment: The warranty terms changed on July 1."
+  },
+  {
+    "task_id": "stress_sentiment_018",
+    "prompt": "Classify the sentiment: The soup was cold and the server ignored us."
+  },
+  {
+    "task_id": "stress_sentiment_019",
+    "prompt": "Classify as positive, negative, neutral, or mixed: Helpful documentation, but the examples are outdated."
+  },
+  {
+    "task_id": "stress_sentiment_020",
+    "prompt": "Classify the sentiment and include a short justification: Beautiful design, unreliable charging."
+  },
+  {
+    "task_id": "stress_summarization_001",
+    "prompt": "Summarize in one sentence: The city repaired the bridge, reopened two bus routes, and plans overnight inspections next month."
+  },
+  {
+    "task_id": "stress_summarization_002",
+    "prompt": "Summarize in exactly two bullets: The museum added Friday evening hours, opened a textile exhibit, and launched free student tours."
+  },
+  {
+    "task_id": "stress_summarization_003",
+    "prompt": "Summarize in under 18 words: A bakery switched to electric ovens, lowered fuel costs, and kept bread prices unchanged."
+  },
+  {
+    "task_id": "stress_summarization_004",
+    "prompt": "Summarize briefly: The clinic vaccinated 400 residents, added weekend appointments, and hired two nurses."
+  },
+  {
+    "task_id": "stress_summarization_005",
+    "prompt": "Summarize in one sentence: The school garden program expanded after parents donated tools and students requested outdoor science labs."
+  },
+  {
+    "task_id": "stress_summarization_006",
+    "prompt": "Summarize in exactly two bullets: The airport upgraded scanners, reduced average security waits, and added multilingual signs."
+  },
+  {
+    "task_id": "stress_summarization_007",
+    "prompt": "Summarize in fewer than 20 words: The team delayed the launch to fix payment bugs and improve account recovery."
+  },
+  {
+    "task_id": "stress_summarization_008",
+    "prompt": "Summarize in one sentence: Farmers tested drought-resistant corn, recorded higher yields, and shared seed data with nearby villages."
+  },
+  {
+    "task_id": "stress_summarization_009",
+    "prompt": "Summarize briefly without adding unsupported details: The council approved bike lanes on Pine Street and postponed the parking vote."
+  },
+  {
+    "task_id": "stress_summarization_010",
+    "prompt": "Summarize in exactly two bullets: The app added offline maps, compressed downloads, and a route-sharing feature."
+  },
+  {
+    "task_id": "stress_summarization_011",
+    "prompt": "Summarize in one sentence: A storm damaged the pier, but crews restored power and reopened the market by Sunday."
+  },
+  {
+    "task_id": "stress_summarization_012",
+    "prompt": "Summarize under 25 words: The university froze tuition, expanded emergency grants, and created a food pantry partnership."
+  },
+  {
+    "task_id": "stress_summarization_013",
+    "prompt": "Summarize in one sentence: The theater sold out opening night, added two performances, and donated proceeds to flood relief."
+  },
+  {
+    "task_id": "stress_summarization_014",
+    "prompt": "Summarize in exactly two bullets: The zoo opened a night exhibit, trained new guides, and capped visitor numbers."
+  },
+  {
+    "task_id": "stress_summarization_015",
+    "prompt": "Summarize briefly: The company recalled the charger after overheating reports and offered free replacements through August."
+  },
+  {
+    "task_id": "stress_summarization_016",
+    "prompt": "Summarize in one sentence: The library digitized local newspapers, added searchable archives, and invited residents to tag photos."
+  },
+  {
+    "task_id": "stress_summarization_017",
+    "prompt": "Summarize under 20 words: The cafe introduced reusable cups and gives discounts to customers who bring them back."
+  },
+  {
+    "task_id": "stress_summarization_018",
+    "prompt": "Summarize in exactly two bullets: The hospital opened a pediatric wing, hired specialists, and shortened referral times."
+  },
+  {
+    "task_id": "stress_summarization_019",
+    "prompt": "Summarize in one sentence: The committee rejected the budget draft because travel costs rose and revenue estimates fell."
+  },
+  {
+    "task_id": "stress_summarization_020",
+    "prompt": "Summarize briefly: The rail agency tested quieter brakes, surveyed nearby residents, and will publish findings in October."
+  },
+  {
+    "task_id": "stress_ner_001",
+    "prompt": "Extract named entities: Maya Chen from Orion Foods met partners in Nairobi on April 3."
+  },
+  {
+    "task_id": "stress_ner_002",
+    "prompt": "Extract named entities: Carlos Rivera from Northstar Bank met partners in Madrid on June 18."
+  },
+  {
+    "task_id": "stress_ner_003",
+    "prompt": "Extract named entities: Asha Patel from GreenGrid Energy met partners in Vancouver on September 5."
+  },
+  {
+    "task_id": "stress_ner_004",
+    "prompt": "Extract named entities: Lena Ortiz from Harbor Analytics met partners in Boston on July 10, 2026."
+  },
+  {
+    "task_id": "stress_ner_005",
+    "prompt": "Extract named entities: Daniel Wu from Quantum Forge met partners in Singapore on January 21."
+  },
+  {
+    "task_id": "stress_ner_006",
+    "prompt": "Extract named entities: Priya Shah from Atlas Robotics met partners in Toronto on July 9."
+  },
+  {
+    "task_id": "stress_ner_007",
+    "prompt": "Extract named entities: Elena Morris from BrightWave Labs met partners in Lisbon on March 12."
+  },
+  {
+    "task_id": "stress_ner_008",
+    "prompt": "Extract named entities: Noah Bennett from Cedar Health met partners in Denver on May 4."
+  },
+  {
+    "task_id": "stress_ner_009",
+    "prompt": "Extract named entities: Iris Kim from Blue Harbor Studio met partners in Seoul on August 14."
+  },
+  {
+    "task_id": "stress_ner_010",
+    "prompt": "Extract named entities: Omar Ali from Summit Rail met partners in Cairo on February 2."
+  },
+  {
+    "task_id": "stress_ner_011",
+    "prompt": "Extract named entities: Grace Lin from Nova Textiles met partners in Osaka on November 6."
+  },
+  {
+    "task_id": "stress_ner_012",
+    "prompt": "Extract named entities: Ethan Brooks from Maple Trust met partners in Chicago on October 19."
+  },
+  {
+    "task_id": "stress_ner_013",
+    "prompt": "Extract named entities: Sofia Rossi from Argo Marine met partners in Athens on December 8."
+  },
+  {
+    "task_id": "stress_ner_014",
+    "prompt": "Extract named entities: Mateo Cruz from Silverline Media met partners in Bogota on March 30."
+  },
+  {
+    "task_id": "stress_ner_015",
+    "prompt": "Extract named entities: Hannah Park from Zenith Solar met partners in Phoenix on June 1."
+  },
+  {
+    "task_id": "stress_ner_016",
+    "prompt": "Extract named entities: Nina Kapoor from Riverstone Analytics met partners in Dublin on April 22."
+  },
+  {
+    "task_id": "stress_ner_017",
+    "prompt": "Extract named entities: Theo Martin from Pioneer Foods met partners in Paris on January 5."
+  },
+  {
+    "task_id": "stress_ner_018",
+    "prompt": "Extract named entities: Amara Okafor from Lumen Bank met partners in Lagos on May 17."
+  },
+  {
+    "task_id": "stress_ner_019",
+    "prompt": "Extract named entities: Jonas Meyer from Northwind Games met partners in Berlin on September 28."
+  },
+  {
+    "task_id": "stress_ner_020",
+    "prompt": "Extract named entities: Mei Tan from Evergreen Transit met partners in Melbourne on July 24."
+  },
+  {
+    "task_id": "stress_code_debugging_001",
+    "prompt": "Debug this Python code and provide the corrected code: def max_value(items):\n    best = items[0]\n    for item in items:\n        return best\nIt should return the largest item."
+  },
+  {
+    "task_id": "stress_code_debugging_002",
+    "prompt": "Fix the off-by-one bug: def count_down(n):\n    return list(range(n, 0, -1))\nIt should include 0 at the end."
+  },
+  {
+    "task_id": "stress_code_debugging_003",
+    "prompt": "Correct the mutable default: def add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags"
+  },
+  {
+    "task_id": "stress_code_debugging_004",
+    "prompt": "Debug this late-binding code: funcs=[]\nfor i in range(3):\n    funcs.append(lambda: i)\nEach lambda should return its own i."
+  },
+  {
+    "task_id": "stress_code_debugging_005",
+    "prompt": "Fix this generator exhaustion bug: nums = (n for n in [1, 2, 3])\nfirst = sum(nums)\nsecond = sum(nums)\nBoth sums should be 6."
+  },
+  {
+    "task_id": "stress_code_debugging_006",
+    "prompt": "Debug this sorting code: words=['pear','fig','apple']\nwords.sort()\nIt should sort by word length."
+  },
+  {
+    "task_id": "stress_code_debugging_007",
+    "prompt": "Fix the missing empty-list edge case: def average(nums):\n    return sum(nums)/len(nums)\nReturn 0 for an empty list."
+  },
+  {
+    "task_id": "stress_code_debugging_008",
+    "prompt": "Correct this code: def is_even(n):\n    return n % 2\nIt should return True for even numbers."
+  },
+  {
+    "task_id": "stress_code_debugging_009",
+    "prompt": "Debug: def reverse_words(words):\n    words.reverse()\nIt should return the reversed list."
+  },
+  {
+    "task_id": "stress_code_debugging_010",
+    "prompt": "Fix this accumulator bug: total=0\nfor n in [1,2,3]:\n    total=n\nprint(total)\nIt should print 6."
+  },
+  {
+    "task_id": "stress_code_debugging_011",
+    "prompt": "Correct this function: def first(items):\n    return items[0]\nIt should return None when the list is empty."
+  },
+  {
+    "task_id": "stress_code_debugging_012",
+    "prompt": "Fix this code: def clamp(x):\n    if x < 0: return 0\n    if x > 10: return x\n    return x\nValues above 10 should return 10."
+  },
+  {
+    "task_id": "stress_code_debugging_013",
+    "prompt": "Debug this dictionary count: counts={}\nfor word in words:\n    counts[word]=1\nIt should count repeated words."
+  },
+  {
+    "task_id": "stress_code_debugging_014",
+    "prompt": "Correct this code: def last_even(nums):\n    for n in nums:\n        if n % 2 == 0:\n            return n\nIt should return the last even number."
+  },
+  {
+    "task_id": "stress_code_debugging_015",
+    "prompt": "Fix this Python code: def normalize(name):\n    name.strip().lower()\nIt should return the normalized string."
+  },
+  {
+    "task_id": "stress_code_debugging_016",
+    "prompt": "Debug this list copy bug: def add_item(items):\n    copy = items\n    copy.append('x')\n    return copy\nIt should not mutate the original list."
+  },
+  {
+    "task_id": "stress_code_debugging_017",
+    "prompt": "Correct this code: def contains_a(text):\n    return text.find('a')\nIt should return a boolean."
+  },
+  {
+    "task_id": "stress_code_debugging_018",
+    "prompt": "Fix this loop: for i in range(len(items)+1):\n    print(items[i])\nIt should not index past the end."
+  },
+  {
+    "task_id": "stress_code_debugging_019",
+    "prompt": "Debug: def merge(a,b):\n    a.append(b)\n    return a\nIt should concatenate two lists."
+  },
+  {
+    "task_id": "stress_code_debugging_020",
+    "prompt": "Correct this code: def positive(nums):\n    return [n for n in nums if n >= 0]\nIt should include only numbers greater than zero."
+  },
+  {
+    "task_id": "stress_logic_001",
+    "prompt": "Logic puzzle: Alice is older than Ben. Ben is older than Cara. Who is youngest?"
+  },
+  {
+    "task_id": "stress_logic_002",
+    "prompt": "If all bronze keys open the archive and this key is bronze, does this key open the archive?"
+  },
+  {
+    "task_id": "stress_logic_003",
+    "prompt": "Constraint puzzle: The red box is left of the blue box. The green box is right of the blue box. Which box is in the middle?"
+  },
+  {
+    "task_id": "stress_logic_004",
+    "prompt": "Exactly one of Nora and Omar took the cookie. Nora tells the truth and says Omar took it. Omar lies and says Nora took it. Who took it?"
+  },
+  {
+    "task_id": "stress_logic_005",
+    "prompt": "If no electric scooters are allowed in the lobby and Luna's vehicle is an electric scooter, is it allowed?"
+  },
+  {
+    "task_id": "stress_logic_006",
+    "prompt": "Seating puzzle: Ana sits left of Bo. Bo sits left of Cy. Who sits in the middle?"
+  },
+  {
+    "task_id": "stress_logic_007",
+    "prompt": "Ownership puzzle: The red mug belongs to Kim. The blue mug belongs to Lee. Which mug belongs to Kim?"
+  },
+  {
+    "task_id": "stress_logic_008",
+    "prompt": "Logic puzzle: Every raven in the story is black. This bird is a raven in the story. Is it black?"
+  },
+  {
+    "task_id": "stress_logic_009",
+    "prompt": "Constraint puzzle: The cat is not in box 1. It is not in box 3. Boxes are 1, 2, and 3. Which box has the cat?"
+  },
+  {
+    "task_id": "stress_logic_010",
+    "prompt": "Truth puzzle: Pia always lies. Pia says the coin is heads. Is the coin heads?"
+  },
+  {
+    "task_id": "stress_logic_011",
+    "prompt": "Order puzzle: Dan finished after Eli but before Fay. Who finished first?"
+  },
+  {
+    "task_id": "stress_logic_012",
+    "prompt": "If all sealed jars are safe and this jar is not sealed, can we conclude it is safe?"
+  },
+  {
+    "task_id": "stress_logic_013",
+    "prompt": "Constraint puzzle: The square is above the circle. The triangle is below the circle. Which shape is in the middle?"
+  },
+  {
+    "task_id": "stress_logic_014",
+    "prompt": "Logic puzzle: Exactly one switch is on. Switch A is off. Switch B is off. Which switch is on: A, B, or C?"
+  },
+  {
+    "task_id": "stress_logic_015",
+    "prompt": "Logic puzzle: If every ticket with a star gets a prize and Maya's ticket has a star, does Maya get a prize?"
+  },
+  {
+    "task_id": "stress_logic_016",
+    "prompt": "Seating puzzle: Jon is immediately right of Kai. Mira is immediately right of Jon. Who is leftmost?"
+  },
+  {
+    "task_id": "stress_logic_017",
+    "prompt": "Pet puzzle: The teacher owns the fish. Raul owns the turtle. Which pet does Raul own?"
+  },
+  {
+    "task_id": "stress_logic_018",
+    "prompt": "If no guests under 18 can enter and Sam is 17, can Sam enter?"
+  },
+  {
+    "task_id": "stress_logic_019",
+    "prompt": "Logic puzzle: One door is green and one is yellow. The prize is not behind the green door. Which door has the prize?"
+  },
+  {
+    "task_id": "stress_logic_020",
+    "prompt": "Truth puzzle: Tia tells the truth. Tia says Max has the map. Who has the map?"
+  },
+  {
+    "task_id": "stress_code_generation_001",
+    "prompt": "Write a Python function named second_largest(nums) that returns the second-largest distinct number, or None if it does not exist."
+  },
+  {
+    "task_id": "stress_code_generation_002",
+    "prompt": "Write a Python function named unique_ordered(items) that returns unique items while preserving first-seen order."
+  },
+  {
+    "task_id": "stress_code_generation_003",
+    "prompt": "Write a Python function named count_words(words) that returns a dictionary of word counts."
+  },
+  {
+    "task_id": "stress_code_generation_004",
+    "prompt": "Write a Python function named parse_pairs(text) that parses 'a=1;b=2' into {'a':'1','b':'2'}."
+  },
+  {
+    "task_id": "stress_code_generation_005",
+    "prompt": "Write a Python function named first_or_default(items, default=None) that returns the first item or default when empty."
+  },
+  {
+    "task_id": "stress_code_generation_006",
+    "prompt": "Write a Python function named flatten_once(items) that flattens one level of nested lists."
+  },
+  {
+    "task_id": "stress_code_generation_007",
+    "prompt": "Write a Python function named safe_ratio(a, b) that returns None when b is zero, otherwise a / b."
+  },
+  {
+    "task_id": "stress_code_generation_008",
+    "prompt": "Write a Python function named clamp(x, low, high) that limits x to the inclusive range."
+  },
+  {
+    "task_id": "stress_code_generation_009",
+    "prompt": "Write a Python function named chunk_pairs(items) that returns consecutive pairs, dropping a final unpaired item."
+  },
+  {
+    "task_id": "stress_code_generation_010",
+    "prompt": "Write a Python function named initials(name) that returns uppercase initials from a full name."
+  },
+  {
+    "task_id": "stress_code_generation_011",
+    "prompt": "Write a Python function named moving_sum(nums) that returns cumulative sums."
+  },
+  {
+    "task_id": "stress_code_generation_012",
+    "prompt": "Write a Python function named invert_dict(d) that maps values to lists of keys preserving insertion order."
+  },
+  {
+    "task_id": "stress_code_generation_013",
+    "prompt": "Write a Python function named is_palindrome(text) that ignores case and spaces."
+  },
+  {
+    "task_id": "stress_code_generation_014",
+    "prompt": "Write a Python function named only_positive(nums) that returns numbers greater than zero."
+  },
+  {
+    "task_id": "stress_code_generation_015",
+    "prompt": "Write a Python function named merge_counts(a, b) that adds values from two dictionaries."
+  },
+  {
+    "task_id": "stress_code_generation_016",
+    "prompt": "Write a Python function named last_index(items, value) that returns the last index of value or -1."
+  },
+  {
+    "task_id": "stress_code_generation_017",
+    "prompt": "Write a Python function named title_names(names) that strips and title-cases each name."
+  },
+  {
+    "task_id": "stress_code_generation_018",
+    "prompt": "Write a Python function named has_duplicates(items) that returns True if any item appears more than once."
+  },
+  {
+    "task_id": "stress_code_generation_019",
+    "prompt": "Write a Python function named median_of_three(a, b, c) that returns the middle value."
+  },
+  {
+    "task_id": "stress_code_generation_020",
+    "prompt": "Write a Python function named compact_none(items) that removes None values while keeping other falsey values."
+  }
+]
