@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from .config import Config
-from .prompts import build_user_prompt, max_tokens_for_category
+from .prompts import build_chat_messages, max_tokens_for_category
 
 
 class FireworksClientError(RuntimeError):
@@ -166,9 +166,7 @@ class FireworksClient:
     ) -> tuple[str, bool]:
         payload = {
             "model": model,
-            "messages": [
-                {"role": "user", "content": build_user_prompt(category, prompt)},
-            ],
+            "messages": build_chat_messages(category, prompt),
             "temperature": 0.0,
             "max_tokens": max_tokens_for_category(category),
         }

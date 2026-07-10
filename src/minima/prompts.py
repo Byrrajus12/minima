@@ -1,4 +1,4 @@
-"""Short prompt suffixes for Fireworks calls."""
+"""Prompt helpers for Fireworks calls."""
 
 from __future__ import annotations
 
@@ -43,6 +43,19 @@ CATEGORY_CONFIG = {
 }
 
 
+SYSTEM_PROMPTS = {
+    "factual": "English only. Be concise and accurate. No preamble. Follow any requested format.",
+    "math": 'English only. Solve accurately with brief necessary work. End with "Answer: <value>".',
+    "sentiment": "English only. Use the requested sentiment label and give one brief reason. No preamble.",
+    "summarization": "English only. Summarize faithfully. Obey any requested length, structure, and format. Do not add facts.",
+    "ner": "English only. Extract every named entity. Use the requested entity types and output format exactly. No preamble.",
+    "code_debugging": "English only. State the bug briefly, then provide corrected code. Follow the requested format.",
+    "logic": 'English only. Reason in short numbered steps. Check every constraint. Answer every part. End with "Answer: <value>". Do not hedge.',
+    "code_generation": "English only. Return correct code that follows the requested signature and constraints. Avoid extra explanation unless requested.",
+    "unknown": "English only. Answer accurately and concisely. Follow any requested format.",
+}
+
+
 def suffix_for_category(category: str) -> str:
     config = CATEGORY_CONFIG.get(category, CATEGORY_CONFIG["unknown"])
     return str(config["suffix"])
@@ -55,3 +68,14 @@ def max_tokens_for_category(category: str) -> int:
 
 def build_user_prompt(category: str, prompt: str) -> str:
     return f"{prompt}\n\n{suffix_for_category(category)}"
+
+
+def system_prompt_for_category(category: str) -> str:
+    return SYSTEM_PROMPTS.get(category, SYSTEM_PROMPTS["unknown"])
+
+
+def build_chat_messages(category: str, prompt: str) -> list[dict[str, str]]:
+    return [
+        {"role": "system", "content": system_prompt_for_category(category)},
+        {"role": "user", "content": prompt},
+    ]

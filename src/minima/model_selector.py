@@ -124,14 +124,19 @@ def select_model_candidates(category: str, allowed_models: tuple[str, ...]) -> t
     gemma_small, gemma_mid = _split_gemma(gemma)
 
     if category in {"code_debugging", "code_generation"}:
-        return _dedupe(code + gemma_mid + minimax + gemma_small + other)
-    if category in {"math", "logic"}:
-        return _dedupe(code + gemma_mid + gemma_small + minimax + other)
-    if category in {"factual", "sentiment"}:
-        return _dedupe(minimax + gemma_small + gemma_mid + code + other)
-    if category in {"ner", "summarization", "unknown"}:
-        return _dedupe(gemma_small + gemma_mid + minimax + code + other)
-    return _dedupe(gemma_small + gemma_mid + minimax + code + other)
+        return _dedupe(code + minimax + gemma_small + gemma_mid + other)
+    if category == "ner":
+        return _dedupe(minimax + code + gemma_small + gemma_mid + other)
+    if category in {
+        "factual",
+        "math",
+        "sentiment",
+        "summarization",
+        "logic",
+        "unknown",
+    }:
+        return _dedupe(code + minimax + gemma_small + gemma_mid + other)
+    return _dedupe(code + minimax + gemma_small + gemma_mid + other)
 
 
 def select_fallback_model(
