@@ -7,7 +7,7 @@ import os
 import sys
 
 from .fireworks_client import FireworksClient, FireworksClientError
-from .local_solver import solve_local
+from .local_solver import try_local_answer
 from .model_selector import select_model_candidates
 from .task_classifier import classify_task
 
@@ -39,6 +39,16 @@ def _log_model_failure(
     )
 
 
+def _log_local_solved(task_id: str | None, category: str) -> None:
+    if os.getenv("MINIMA_LOG_ROUTING") != "1":
+        return
+    label = task_id or "-"
+    print(
+        f"minima local_solved task_id={label} category={category}",
+        file=sys.stderr,
+    )
+
+
 def _safe_fallback_answer(category: str) -> str:
     if category == "sentiment":
         return "neutral"
@@ -49,21 +59,16 @@ def _safe_fallback_answer(category: str) -> str:
     return "Unable to determine."
 
 
-def _local_solver_enabled() -> bool:
-    return os.getenv("MINIMA_ENABLE_LOCAL_SOLVER") == "1"
-
-
 @dataclass(frozen=True)
 class Router:
     client: FireworksClient
 
     def answer(self, prompt: str, task_id: str | None = None) -> str:
         category = classify_task(prompt)
-        if _local_solver_enabled():
-            local_answer = solve_local(category, prompt)
-            if local_answer is not None:
-                _log_routing(task_id, category, f"local:{category}", retry=0)
-                return local_answer
+        local_answer = try_local_answer(category, prompt)
+        if local_answer is not None:
+            _log_local_solved(task_id, category)
+            return local_answer
 
         if self.client.config.placeholder_mode:
             _log_routing(task_id, category, "placeholder", retry=0)

@@ -22,6 +22,10 @@ eval/reports/*
 !eval/reports/.gitkeep
 *.log
 
+# Local model weights
+models/*.gguf
+!models/.gitkeep
+
 # Build artifacts
 dist/
 build/

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+
 
 CATEGORY_CONFIG = {
     "sentiment": {
@@ -43,6 +45,46 @@ CATEGORY_CONFIG = {
 }
 
 
+COMPACT_CATEGORY_CONFIG = {
+    "sentiment": {
+        "suffix": "Label first: positive, negative, neutral, or mixed.",
+        "max_tokens": 24,
+    },
+    "ner": {
+        "suffix": "Format: text - TYPE. Types PERSON ORG LOCATION DATE.",
+        "max_tokens": 120,
+    },
+    "summarization": {
+        "suffix": "Follow exactly. No extra facts.",
+        "max_tokens": 120,
+    },
+    "factual": {
+        "suffix": "Answer only.",
+        "max_tokens": 48,
+    },
+    "math": {
+        "suffix": "Solve. End with Answer: <value>.",
+        "max_tokens": 96,
+    },
+    "logic": {
+        "suffix": "Answer only. Brief reasoning only if needed.",
+        "max_tokens": 120,
+    },
+    "code_debugging": {
+        "suffix": "Return fixed code only.",
+        "max_tokens": 220,
+    },
+    "code_generation": {
+        "suffix": "Return code only.",
+        "max_tokens": 220,
+    },
+    "unknown": {
+        "suffix": "Answer only.",
+        "max_tokens": 120,
+    },
+}
+
+
 SYSTEM_PROMPTS = {
     "factual": "English only. Be concise and accurate. No preamble. Follow any requested format.",
     "math": 'English only. Solve accurately with brief necessary work. End with "Answer: <value>".',
@@ -56,13 +98,39 @@ SYSTEM_PROMPTS = {
 }
 
 
+COMPACT_SYSTEM_PROMPTS = {
+    "factual": "Answer only.",
+    "math": "Solve. End with Answer: <value>.",
+    "sentiment": "Label first: positive, negative, neutral, or mixed.",
+    "summarization": "Follow exactly. No extra facts.",
+    "ner": "Format: text - TYPE. Types PERSON ORG LOCATION DATE.",
+    "code_debugging": "Return fixed code only.",
+    "logic": "Answer only. Brief reasoning only if needed.",
+    "code_generation": "Return code only.",
+    "unknown": "Answer only.",
+}
+
+
+def _remote_compact_enabled() -> bool:
+    return os.getenv("MINIMA_REMOTE_COMPACT") == "1"
+
+
+def _category_config(category: str) -> dict[str, object]:
+    config = COMPACT_CATEGORY_CONFIG if _remote_compact_enabled() else CATEGORY_CONFIG
+    return config.get(category, config["unknown"])
+
+
+def _system_prompts() -> dict[str, str]:
+    return COMPACT_SYSTEM_PROMPTS if _remote_compact_enabled() else SYSTEM_PROMPTS
+
+
 def suffix_for_category(category: str) -> str:
-    config = CATEGORY_CONFIG.get(category, CATEGORY_CONFIG["unknown"])
+    config = _category_config(category)
     return str(config["suffix"])
 
 
 def max_tokens_for_category(category: str) -> int:
-    config = CATEGORY_CONFIG.get(category, CATEGORY_CONFIG["unknown"])
+    config = _category_config(category)
     return int(config["max_tokens"])
 
 
@@ -71,7 +139,8 @@ def build_user_prompt(category: str, prompt: str) -> str:
 
 
 def system_prompt_for_category(category: str) -> str:
-    return SYSTEM_PROMPTS.get(category, SYSTEM_PROMPTS["unknown"])
+    prompts = _system_prompts()
+    return prompts.get(category, prompts["unknown"])
 
 
 def build_chat_messages(category: str, prompt: str) -> list[dict[str, str]]:
