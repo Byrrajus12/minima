@@ -111,6 +111,55 @@ COMPACT_SYSTEM_PROMPTS = {
 }
 
 
+LOCAL_CATEGORY_CONFIG = {
+    "factual": {
+        "system": "English only. Give a direct concise answer. No preamble. Follow the user's requested format. If the request needs current or live information, say it requires up-to-date lookup.",
+        "max_tokens": 96,
+        "format": "direct",
+    },
+    "math": {
+        "system": "English only. Calculate before responding. Return the complete requested final values first. No long derivation, no examples, no JSON. Output exactly this style: FINAL: complete requested values with labels and units.",
+        "max_tokens": 128,
+        "format": "FINAL: ...",
+    },
+    "sentiment": {
+        "system": "English only. Output exactly one sentiment label and one concise reason. Use mixed when substantial positive and negative evaluation are both present. Format:\nLABEL: positive|negative|neutral|mixed\nREASON: one concise sentence",
+        "max_tokens": 48,
+        "format": "LABEL/REASON",
+    },
+    "summarization": {
+        "system": "English only. Return only the requested summary. No wrapper, no label, no JSON, no preamble. Obey requested length, structure, chronology, and format. Do not add facts.",
+        "max_tokens": 120,
+        "format": "summary only",
+    },
+    "ner": {
+        "system": "English only. Extract named entities using exact source spans, one entity per line. Format: exact source span | PERSON/ORG/LOCATION/DATE. Include relative dates and times. Do not expand PERSON spans with titles unless the title is part of the requested span. Separate locations from institutions or venues. Do not merge adjacent entities. Do not invent spans. Use only allowed types.",
+        "max_tokens": 128,
+        "format": "span | TYPE",
+    },
+    "code_debugging": {
+        "system": "English only. Provide the corrected Python code. Include concise bug identification only if the user requested it. No unnecessary explanation.",
+        "max_tokens": 256,
+        "format": "corrected code",
+    },
+    "logic": {
+        "system": "English only. Check all constraints before answering. Output the complete concise conclusion first. No long derivation. Answer every requested part. Format: ANSWER: complete concise conclusion",
+        "max_tokens": 72,
+        "format": "ANSWER: ...",
+    },
+    "code_generation": {
+        "system": "English only. Return Python code only. No JSON, no markdown fences, no prose after code. Preserve the requested name, signature, return type, and constraints.",
+        "max_tokens": 256,
+        "format": "code only",
+    },
+    "unknown": {
+        "system": "English only. Answer concisely and follow the user's requested format.",
+        "max_tokens": 120,
+        "format": "direct",
+    },
+}
+
+
 def _remote_compact_enabled() -> bool:
     return os.getenv("MINIMA_REMOTE_COMPACT") == "1"
 
@@ -148,3 +197,18 @@ def build_chat_messages(category: str, prompt: str) -> list[dict[str, str]]:
         {"role": "system", "content": system_prompt_for_category(category)},
         {"role": "user", "content": prompt},
     ]
+
+
+def local_system_prompt_for_category(category: str) -> str:
+    config = LOCAL_CATEGORY_CONFIG.get(category, LOCAL_CATEGORY_CONFIG["unknown"])
+    return str(config["system"])
+
+
+def local_max_tokens_for_category(category: str) -> int:
+    config = LOCAL_CATEGORY_CONFIG.get(category, LOCAL_CATEGORY_CONFIG["unknown"])
+    return int(config["max_tokens"])
+
+
+def local_output_format_for_category(category: str) -> str:
+    config = LOCAL_CATEGORY_CONFIG.get(category, LOCAL_CATEGORY_CONFIG["unknown"])
+    return str(config["format"])

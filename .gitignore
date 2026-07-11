@@ -18,6 +18,8 @@ output/*
 .final_verify/
 
 # Eval artifacts
+policy_eval/
+policy_eval_artifacts/
 eval/reports/*
 !eval/reports/.gitkeep
 *.log
@@ -35,3 +37,5 @@ build/
 .DS_Store
 .vscode/
 .idea/
+
+models/

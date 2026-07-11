@@ -11,7 +11,7 @@ from typing import Sequence
 
 from .config import ConfigError, load_config
 from .fireworks_client import FireworksClient, FireworksClientError
-from .router import Router
+from .runtime import LocalFirstOrchestrator
 from .validators import ValidationError, validate_results, validate_tasks
 
 
@@ -42,13 +42,13 @@ def write_results(path: Path, results: list[dict[str, str]]) -> None:
 
 def run(input_path: Path, output_path: Path) -> int:
     config = load_config()
-    router = Router(FireworksClient(config))
+    orchestrator = LocalFirstOrchestrator(FireworksClient(config))
     tasks = read_tasks(input_path)
 
     results: list[dict[str, str]] = []
     for task in tasks:
         try:
-            answer = router.answer(task["prompt"], task_id=task["task_id"])
+            answer = orchestrator.answer(task["prompt"], task_id=task["task_id"])
         except Exception:
             traceback.print_exc(file=sys.stderr)
             answer = ""

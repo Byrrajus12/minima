@@ -4,11 +4,8 @@ from __future__ import annotations
 
 import ast
 from collections.abc import Iterable
-import os
 import re
 import signal
-
-from .local_llm import local_generate
 
 
 MONTHS = (
@@ -211,37 +208,6 @@ NEUTRAL_TERMS = {
 NEGATION_TERMS = {"barely", "hardly", "never", "no", "not"}
 CONTRAST_TERMS = {"although", "but", "however", "though", "yet"}
 
-SAFE_LOCAL_MODEL_CATEGORIES = {
-    "code_generation",
-}
-
-CHASE_LOCAL_MODEL_CATEGORIES = {
-    "factual",
-    "sentiment",
-    "summarization",
-    "ner",
-    "code_debugging",
-    "code_generation",
-}
-
-LOCAL_SYSTEM_PROMPTS = {
-    "sentiment": "Classify sentiment as positive, negative, neutral, or mixed. Output only the label unless asked for a reason.",
-    "summarization": "Summarize faithfully. Obey any stated length. Output only the summary.",
-    "factual": "Answer correctly and concisely. Output only the answer.",
-    "code_debugging": "Return only the fixed Python code. No markdown and no explanation.",
-    "code_generation": "Return only correct code. No explanation.",
-    "ner": "Extract named entities. One per line as text - TYPE. TYPE is PERSON, ORG, LOCATION, or DATE. Output only entities.",
-}
-
-LOCAL_MAX_TOKENS = {
-    "sentiment": 24,
-    "summarization": 96,
-    "factual": 64,
-    "code_debugging": 220,
-    "code_generation": 180,
-    "ner": 120,
-}
-
 ALLOWED_NER_TYPES = {"PERSON", "ORG", "LOCATION", "DATE"}
 
 REFUSAL_MARKERS = (
@@ -265,27 +231,6 @@ HEDGING_MARKERS = (
 )
 
 
-def _local_policy() -> str:
-    return "chase" if os.getenv("MINIMA_LOCAL_POLICY", "").casefold() == "chase" else "safe"
-
-
-def _chase_policy_enabled() -> bool:
-    return _local_policy() == "chase"
-
-
-def _local_model_categories() -> set[str]:
-    if _chase_policy_enabled():
-        return CHASE_LOCAL_MODEL_CATEGORIES
-    return SAFE_LOCAL_MODEL_CATEGORIES
-
-
-def try_local_answer(category: str, prompt: str) -> str | None:
-    deterministic = try_deterministic_answer(category, prompt)
-    if deterministic is not None:
-        return deterministic
-    return try_local_model_answer(category, prompt)
-
-
 def try_deterministic_answer(category: str, prompt: str) -> str | None:
     if category == "math":
         return _solve_math(prompt) or _solve_factual(prompt)
@@ -294,7 +239,7 @@ def try_deterministic_answer(category: str, prompt: str) -> str | None:
     if category == "ner":
         return None
     if category == "logic":
-        return _solve_logic(prompt) if _chase_policy_enabled() else None
+        return _solve_logic(prompt)
     if category == "code_generation":
         return None
     if category == "code_debugging":
@@ -303,42 +248,6 @@ def try_deterministic_answer(category: str, prompt: str) -> str | None:
         return _solve_summarization(prompt)
     if category == "factual":
         return _solve_factual(prompt)
-    return None
-
-
-def try_local_model_answer(category: str, prompt: str) -> str | None:
-    if category not in _local_model_categories():
-        return None
-    if category == "factual" and not _chase_factual_prompt_allowed(prompt):
-        return None
-
-    generated = local_generate(
-        system=LOCAL_SYSTEM_PROMPTS[category],
-        prompt=prompt,
-        max_tokens=LOCAL_MAX_TOKENS[category],
-    )
-    if generated is None:
-        return None
-    return _validate_local_model_answer(category, prompt, generated)
-
-
-def solve_local(category: str, prompt: str) -> str | None:
-    return try_local_answer(category, prompt)
-
-
-def _validate_local_model_answer(category: str, prompt: str, output: str) -> str | None:
-    if category == "factual" and _chase_policy_enabled():
-        return _validate_local_factual(prompt, output)
-    if category == "sentiment" and _chase_policy_enabled():
-        return _validate_local_sentiment(prompt, output)
-    if category == "summarization" and _chase_policy_enabled():
-        return _validate_local_summary(prompt, output)
-    if category == "ner" and _chase_policy_enabled():
-        return _validate_local_ner(prompt, output)
-    if category == "code_debugging" and _chase_policy_enabled():
-        return _validate_local_code_debugging(prompt, output)
-    if category == "code_generation":
-        return _validate_local_code_generation(prompt, output)
     return None
 
 
@@ -1108,7 +1017,7 @@ def _solve_math(prompt: str) -> str | None:
         _solve_elapsed_time,
         _solve_each_or_split,
     )
-    solvers = safe_solvers + (chase_solvers if _chase_policy_enabled() else ())
+    solvers = safe_solvers + chase_solvers
     for solver in solvers:
         answer = solver(prompt, text)
         if answer is not None:
@@ -2199,9 +2108,7 @@ def _solve_code_generation(prompt: str) -> str | None:
 
 
 def _solve_code_debugging(prompt: str) -> str | None:
-    if _chase_policy_enabled():
-        return _solve_code_debugging_chase(prompt)
-    return _solve_code_debugging_safe(prompt)
+    return _solve_code_debugging_chase(prompt) or _solve_code_debugging_safe(prompt)
 
 
 def _solve_code_debugging_safe(prompt: str) -> str | None:

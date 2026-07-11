@@ -51,6 +51,14 @@ def classify_task(prompt: str) -> str:
         text,
     ):
         return "code_debugging"
+    # An explicit construction verb plus a function-like contract is
+    # generation even when the prompt also specifies error behavior.
+    if re.search(r"\b(write|implement|create|generate|build)\b", text) and (
+        re.search(r"\b[A-Za-z_]\w*\s*\([^)]*\)", prompt)
+        or re.search(r"\b(?:function|class|program|script|method|code)\b", text)
+        or re.search(r"\b(?:returning|returns?|raise|input|output)\b", text)
+    ):
+        return "code_generation"
     if _looks_like_code(text) and re.search(
         r"\b(fix|bug|wrong|error|debug|incorrect|broken|correct)\b",
         text,
@@ -80,6 +88,15 @@ def classify_task(prompt: str) -> str:
         return "sentiment"
     if re.search(r"\bclassify\b.*\b(positive|negative|neutral|mixed)\b", text):
         return "sentiment"
+    if re.search(
+        r"\b(?:label|classify)\b.*\b(?:sentiment|review|tone|overall|positive|negative|neutral|mixed)\b",
+        text,
+    ):
+        return "sentiment"
+    if re.search(r"\bsentiment\s+(?:label|with)\b|\blabel\s+and\s+(?:justify|explain)\b", text):
+        return "sentiment"
+    if re.search(r"\blabel\s+and\s+(?:one\s+)?reason\b", text):
+        return "sentiment"
 
     if re.search(
         r"\b(summarize|summarise|briefly summarize|summary|tl;dr|condense|"
@@ -88,6 +105,8 @@ def classify_task(prompt: str) -> str:
     ):
         return "summarization"
     if re.search(r"\bin\s+(one|two|three|\d+)\s+(sentence|sentences|words)\b", text):
+        return "summarization"
+    if re.search(r"\bexactly\s+(one|two|three|\d+)\s+(sentence|sentences|words|bullets)\b", text):
         return "summarization"
 
     if re.search(
@@ -106,13 +125,27 @@ def classify_task(prompt: str) -> str:
         text,
     ):
         return "ner"
+    if re.search(r"\b(?:extract|identify|find|list)\b.*\b(?:complete\s+)?spans?\b", text):
+        return "ner"
+
+    if re.search(r"\bdo not calculate\b|\bno calculation\b", text):
+        return "factual"
+    if re.search(r"\b(?:difference between|compare)\b.*\b(?:authentication|authorization|definition|concept|system|method)\b", text):
+        return "factual"
 
     if re.search(
         r"\b(sum|calculate|compute|solve|solve for|evaluate|percentage|average|"
         r"total cost|product|difference|quotient|multiplied|divided|plus|minus|"
-        r"times|costs?|how much|how many|percent|profit|discount|compound|interest)\b",
+        r"times|costs?|how much|how many|percent|profit|discount|compound|interest|"
+        r"sale price|elapsed time|duration|split equally|ratio|proportion)\b",
         text,
     ):
+        return "math"
+    if re.search(r"\$\d+(?:\.\d+)?\s+for\s+\d+\s+\w+.*\b(unit price|per)\b", text):
+        return "math"
+    if re.search(r"\brectangle\b.*\b(length|width)\b.*\b(area|perimeter)\b", text):
+        return "math"
+    if re.search(r"\bfrom\s+\d{1,2}(?::\d{2})?\s*(?:am|pm)?\s+to\s+\d{1,2}(?::\d{2})?\s*(?:am|pm)?\b", text):
         return "math"
     if re.search(r"\d+\s*[\+\-\*/]\s*\d+", text):
         return "math"
@@ -123,6 +156,21 @@ def classify_task(prompt: str) -> str:
         r"truth-teller|liar)\b",
         text,
     ):
+        return "logic"
+    if re.search(
+        r"\b(one each|each.*different|all-different|unique (?:order|solution)|"
+        r"seats? (?:are )?numbered|immediately (?:left|right)|not adjacent|"
+        r"complete order|uniquely determined|which (?:key|shape|box)\b)",
+        text,
+    ):
+        return "logic"
+    if re.search(r"\bif\b.+\bthen\b.+\bis\b.+\?", text):
+        return "logic"
+    if re.search(r"\bif\s+(?:all|no)\b.+\b(?:is|are|can)\b.+\?", text):
+        return "logic"
+    if re.search(r"\bif\b.+\b(?:requires?|implies?|then)\b.+\b(?:does|is|can)\b.+\?", text):
+        return "logic"
+    if re.search(r"\bneed not differ\b|\bwhat does\s+[A-Z]?\w+\s+choose\b", prompt, re.I):
         return "logic"
     if re.search(r"\b(all|every|no|some)\b.*\b(therefore|which|who|what|can|is|are)\b", text):
         return "logic"

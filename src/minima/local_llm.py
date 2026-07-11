@@ -2,15 +2,18 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 import os
 from pathlib import Path
 import re
+import time
 from typing import Any
 
 
 _DEFAULT_MODEL_PATHS = (Path("/app/model.gguf"), Path("/app/models/model.gguf"))
 _MODEL: Any | None = None
 _MODEL_LOAD_ATTEMPTED = False
+_MODEL_INITIALIZATIONS = 0
 
 _SPECIAL_TOKENS = (
     "<|im_start|>",
@@ -28,6 +31,22 @@ _REFUSAL_MARKERS = (
     "i'm unable",
     "sorry, i",
 )
+
+
+@dataclass(frozen=True)
+class LocalGeneration:
+    text: str | None
+    raw_text: str | None
+    prompt_tokens: int
+    completion_tokens: int
+    total_tokens: int
+    runtime_ms: float
+    token_count_estimated: bool
+    error: str | None = None
+    model_load_ms: float = 0.0
+    finish_reason: str | None = None
+    max_completion_tokens: int = 0
+    reached_token_cap: bool = False
 
 
 def _configured_model_paths() -> tuple[Path, ...]:
@@ -58,7 +77,7 @@ def _int_env(name: str, default: int, minimum: int) -> int:
 
 
 def _load_model() -> Any | None:
-    global _MODEL, _MODEL_LOAD_ATTEMPTED
+    global _MODEL, _MODEL_LOAD_ATTEMPTED, _MODEL_INITIALIZATIONS
     if _MODEL_LOAD_ATTEMPTED:
         return _MODEL
 
@@ -77,9 +96,14 @@ def _load_model() -> Any | None:
             n_gpu_layers=0,
             verbose=False,
         )
+        _MODEL_INITIALIZATIONS += 1
     except Exception:
         _MODEL = None
     return _MODEL
+
+
+def model_initialization_count() -> int:
+    return _MODEL_INITIALIZATIONS
 
 
 def _format_qwen_chat(system: str, prompt: str) -> str:
@@ -107,6 +131,47 @@ def _completion_text(response: Any) -> str | None:
     return text if isinstance(text, str) else None
 
 
+def _finish_reason(response: Any) -> str | None:
+    if not isinstance(response, dict):
+        return None
+    choices = response.get("choices")
+    if not isinstance(choices, list) or not choices:
+        return None
+    first_choice = choices[0]
+    if not isinstance(first_choice, dict):
+        return None
+    reason = first_choice.get("finish_reason")
+    return str(reason) if reason is not None else None
+
+
+def _usage_counts(response: Any) -> tuple[int, int, int] | None:
+    if not isinstance(response, dict):
+        return None
+    usage = response.get("usage")
+    if not isinstance(usage, dict):
+        return None
+    prompt_tokens = usage.get("prompt_tokens")
+    completion_tokens = usage.get("completion_tokens")
+    total_tokens = usage.get("total_tokens")
+    if all(isinstance(value, int) for value in (prompt_tokens, completion_tokens, total_tokens)):
+        return int(prompt_tokens), int(completion_tokens), int(total_tokens)
+    return None
+
+
+def _count_tokens(model: Any, text: str) -> int | None:
+    tokenize = getattr(model, "tokenize", None)
+    if not callable(tokenize):
+        return None
+    try:
+        return len(tokenize(text.encode("utf-8")))
+    except Exception:
+        return None
+
+
+def _estimated_tokens(text: str) -> int:
+    return max(1, round(len(text) / 4))
+
+
 def _looks_like_refusal(text: str) -> bool:
     lowered = text.casefold()
     return any(marker in lowered for marker in _REFUSAL_MARKERS)
@@ -130,12 +195,32 @@ def _clean_output(text: str) -> str | None:
 
 
 def local_generate(system: str, prompt: str, max_tokens: int) -> str | None:
+    result = local_generate_with_metadata(system=system, prompt=prompt, max_tokens=max_tokens)
+    return result.text
+
+
+def local_generate_with_metadata(system: str, prompt: str, max_tokens: int) -> LocalGeneration:
+    started = time.perf_counter()
+    load_started = time.perf_counter()
     model = _load_model()
+    model_load_ms = (time.perf_counter() - load_started) * 1000
     if model is None:
-        return None
+        return LocalGeneration(
+            text=None,
+            raw_text=None,
+            prompt_tokens=0,
+            completion_tokens=0,
+            total_tokens=0,
+            runtime_ms=(time.perf_counter() - started) * 1000,
+            token_count_estimated=False,
+            error="model unavailable",
+            model_load_ms=model_load_ms,
+            max_completion_tokens=max_tokens,
+        )
 
     request = _format_qwen_chat(system, prompt)
     token_cap = max(1, min(max_tokens, 256))
+    response: Any | None = None
     try:
         response = model(
             request,
@@ -147,20 +232,61 @@ def local_generate(system: str, prompt: str, max_tokens: int) -> str | None:
             echo=False,
         )
     except Exception:
-        try:
-            response = model(
-                request,
-                max_tokens=token_cap,
-                temperature=0.01,
-                top_p=1.0,
-                repeat_penalty=1.05,
-                stop=["<|im_end|>", "<|endoftext|>"],
-                echo=False,
-            )
-        except Exception:
-            return None
+        return LocalGeneration(
+            text=None,
+            raw_text=None,
+            prompt_tokens=0,
+            completion_tokens=0,
+            total_tokens=0,
+            runtime_ms=(time.perf_counter() - started) * 1000,
+            token_count_estimated=False,
+            error="generation failed",
+            model_load_ms=model_load_ms,
+            max_completion_tokens=token_cap,
+        )
 
     text = _completion_text(response)
+    finish_reason = _finish_reason(response)
+    raw_text = text
+    runtime_ms = (time.perf_counter() - started) * 1000
+    usage = _usage_counts(response)
+    estimated = False
+    if usage is None:
+        prompt_tokens = _count_tokens(model, request)
+        completion_tokens = _count_tokens(model, text or "")
+        if prompt_tokens is None or completion_tokens is None:
+            prompt_tokens = _estimated_tokens(request)
+            completion_tokens = _estimated_tokens(text or "")
+            estimated = True
+        total_tokens = prompt_tokens + completion_tokens
+    else:
+        prompt_tokens, completion_tokens, total_tokens = usage
     if text is None:
-        return None
-    return _clean_output(text)
+        return LocalGeneration(
+            text=None,
+            raw_text=None,
+            prompt_tokens=prompt_tokens,
+            completion_tokens=completion_tokens,
+            total_tokens=total_tokens,
+            runtime_ms=runtime_ms,
+            token_count_estimated=estimated,
+            error="empty completion",
+            model_load_ms=model_load_ms,
+            finish_reason=finish_reason,
+            max_completion_tokens=token_cap,
+            reached_token_cap=completion_tokens >= token_cap,
+        )
+    return LocalGeneration(
+        text=_clean_output(text),
+        raw_text=raw_text,
+        prompt_tokens=prompt_tokens,
+        completion_tokens=completion_tokens,
+        total_tokens=total_tokens,
+        runtime_ms=runtime_ms,
+        token_count_estimated=estimated,
+        error=None,
+        model_load_ms=model_load_ms,
+        finish_reason=finish_reason,
+        max_completion_tokens=token_cap,
+        reached_token_cap=completion_tokens >= token_cap,
+    )

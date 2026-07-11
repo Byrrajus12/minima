@@ -9,3 +9,7 @@ docs/
 eval/reports/
 input/
 output/
+policy_eval/
+policy_eval_artifacts/
+models/*
+!models/model.gguf

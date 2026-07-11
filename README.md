@@ -1,6 +1,6 @@
 # minima
 
-Compact Fireworks model-routing agent for JSON task evaluation.
+Production-shaped local-first agent for JSON task evaluation.
 
 The container reads `/input/tasks.json`, writes `/output/results.json`, and exits with code 0 when the run succeeds.
 
@@ -20,9 +20,28 @@ The container reads `/input/tasks.json`, writes `/output/results.json`, and exit
 ]
 ```
 
+## Runtime architecture
+
+`minima.main` uses one coherent pipeline:
+
+```text
+classify
+-> deterministic solve when provably supported
+-> Qwen3 local primary
+-> normalize
+-> objective validation
+-> at most one targeted local repair
+-> revalidate
+-> narrow Fireworks fallback when necessary
+-> emit {"task_id", "answer"}
+```
+
+Internal validation, repair, and fallback metadata is written only to opt-in
+stderr diagnostics and never to `results.json`.
+
 ## Configuration
 
-Runtime Fireworks settings are read from environment variables:
+Optional Fireworks fallback settings are read from environment variables:
 
 - `FIREWORKS_API_KEY`
 - `FIREWORKS_BASE_URL`
@@ -30,7 +49,19 @@ Runtime Fireworks settings are read from environment variables:
 
 `ALLOWED_MODELS` is a comma-separated list. The agent selects only from those exact model strings and never hardcodes model IDs.
 
-When none of these variables are set, minima uses a deterministic placeholder answer marked `LOCAL TEST PLACEHOLDER`. This mode is for local JSON IO smoke tests only. If any Fireworks setting is provided, all required settings must be present and real Fireworks calls are used.
+When none of these variables are set, minima keeps the output contract valid and
+emits the safest available local answer for tasks that would otherwise fall back.
+If any Fireworks setting is provided, all required settings must be present and
+real Fireworks calls may be used for narrow fallback cases.
+
+Local Qwen settings:
+
+- `MINIMA_LOCAL_MODEL_PATH` optionally points at the GGUF model.
+- `MINIMA_LOCAL_THREADS` defaults to `2`.
+- `MINIMA_LOCAL_N_CTX` defaults to `1024`.
+- generation temperature is `0.0`.
+
+Set `MINIMA_LOG_ROUTING=1` to enable compact stderr routing diagnostics.
 
 ## Local Run
 
